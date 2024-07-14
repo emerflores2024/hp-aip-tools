@@ -1,4 +1,5 @@
-'use client';
+{/* 'use client'; */}
+
 import { useState, useEffect, use } from 'react';
 import { Card } from 'flowbite-react';
 import {
@@ -10,11 +11,20 @@ import {
   TableRow,
 } from 'flowbite-react';
 import { Spinner } from 'flowbite-react';
+import { sql } from '@vercel/postgres';
 
-export default function Home() {
+export default async function Home() {
+
+  const sample_sql = await sql`SELECT * FROM test;`;
+  const data_rows = sample_sql.rows;
+
+  {/* 
   const [data, setData] = useState(null);
   const [isLoading, setLoading] = useState(true);
 
+  
+
+  
   useEffect(() => {
     fetch('https://jsonplaceholder.typicode.com/todos/1')
       .then((res) => res.json())
@@ -30,10 +40,16 @@ export default function Home() {
         <Spinner aria-label="Center-aligned spinner example" />
       </div>
     );
-  if (!data) return <p>No profile data</p>;
+    if (!data) return <p>No profile data</p>; */}
 
   return (
     <>
+      {data_rows.map((row) => (
+            <ul key={row.id}>
+              <li>{row.id}</li>
+              <li>{row.name}</li>
+            </ul>
+          ))}
       <div className="flex flex-row gap-7">
         <Card className="max-w-sm bg-amber-100">
           <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white text-center">
