@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 import { Manrope } from 'next/font/google';
 import { ThemeModeScript } from 'flowbite-react';
 import { Suspense } from "react";
-import { Loading } from "@/loading";
+import Loading from "./loading";
 
 import { NavBar } from '@/components/navbar';
 import { SideBar } from '@/components/sidebar';
