@@ -1,11 +1,9 @@
 'use client';
 
 import { Sidebar } from 'flowbite-react';
-import {
-  HiHome,
-  HiBriefcase,
-  HiPlus
-} from 'react-icons/hi';
+import {HiHome} from 'react-icons/hi';
+import { HiBriefcase } from 'react-icons/hi';
+import { HiPlus } from 'react-icons/hi';
 
 import type { CustomFlowbiteTheme } from 'flowbite-react';
 
