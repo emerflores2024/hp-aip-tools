@@ -2,6 +2,8 @@ import './globals.css';
 import type { Metadata } from 'next';
 import { Manrope } from 'next/font/google';
 import { ThemeModeScript } from 'flowbite-react';
+import { Suspense } from "react";
+import { Loading } from "@/loading";
 
 import { NavBar } from '@/components/navbar';
 import { SideBar } from '@/components/sidebar';
@@ -28,7 +30,7 @@ export default function RootLayout({
         <main className="lg:ml-64 h-screen">
           <NavBar />
           <div className="px-5 py-8">
-            {children}
+            <Suspense fallback={<Loading />}>{children}</Suspense>
           </div>
         </main>
       </body>

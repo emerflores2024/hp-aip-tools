@@ -10,12 +10,11 @@ import {
   TableHeadCell,
   TableRow,
 } from 'flowbite-react';
-import { Spinner } from 'flowbite-react';
 import { sql } from '@vercel/postgres';
 
 export default async function Home() {
 
-  const sample_sql = await sql`SELECT * FROM test;`;
+  const sample_sql = await  sql`SELECT * FROM test;`;
   const data_rows = sample_sql.rows;
 
   {/* 
