@@ -9,6 +9,7 @@ import { MdOutlineEmail } from "react-icons/md";
 import { IoHomeOutline } from "react-icons/io5";
 import { BsPrinter } from "react-icons/bs";
 import { FaLaptop } from "react-icons/fa";
+import { NavBar } from '@/components/navbar';
 
 import type { CustomFlowbiteTheme } from 'flowbite-react';
 import Link from 'next/link';
