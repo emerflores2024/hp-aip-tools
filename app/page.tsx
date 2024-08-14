@@ -43,12 +43,6 @@ export default async function Home() {
 
   return (
     <>
-      {data_rows.map((row) => (
-            <ul key={row.id}>
-              <li>{row.id}</li>
-              <li>{row.name}</li>
-            </ul>
-          ))}
       <div className="flex flex-row gap-7">
         <Card className="max-w-sm bg-amber-100">
           <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white text-center">
