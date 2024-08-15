@@ -27,7 +27,7 @@ export default function RootLayout({
       </head>
       <body className={manrope.className}>
         <SideBar />
-        <main className="lg:ml-64 h-screen">
+        <main className="lg:ml-64 h-screen dark bg-gray-800">
           <NavBar />
           <div className="px-5 py-8">
             <Suspense fallback={<Loading />}>{children}</Suspense>

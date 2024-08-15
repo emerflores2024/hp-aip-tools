@@ -18,7 +18,7 @@ const customTheme: CustomFlowbiteTheme['sidebar'] = {
   root: {
     "base": "h-full dark",
     inner:
-      'h-full overflow-y-auto overflow-x-hidden bg-gray-50 px-3 py-4 dark:bg-gray-800',
+      'h-full overflow-y-auto overflow-x-hidden bg-gray-50 px-3 py-4 dark:bg-gray-900',
   },
 };
 
