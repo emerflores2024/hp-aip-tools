@@ -35,31 +35,31 @@ export default function Notes() {
         setSelectedSubject("")
     }
 
-    const notes = `
-    {START CASE SUMMARY}
-    |Problem Description:
+    const notes = 
+`{START CASE SUMMARY}
+|Problem Description:
 
-    ${issue}
+${issue}
 
-    |Frequency of failure:
-    |How to reproduce the failure:
-    |Error message:
-    |Windows Version:
-    |BIOS Version:
-    |Troubleshooting:
+|Frequency of failure:
+|How to reproduce the failure:
+|Error message:
+|Windows Version:
+|BIOS Version:
+|Troubleshooting:
 
-    ${troubleshooting}
+${troubleshooting}
 
-    |Resolution:
+|Resolution:
 
-    ${resolution}
+${resolution}
 
-    |Leave blank:
-    {END CASE SUMMARY}`;
+|Leave blank:
+{END CASE SUMMARY}`;
 
     return (
         <>
-            <div className="flex items-end gap-2 max-w-md">
+            <div className="flex items-end gap-2 w-full md:px-24 lg:max-w-md lg:px-0">
                 <div className="w-full rounded-lg">
                     <div className="mb-2 block">
                         <Label htmlFor="subjects" value="Case subject" />
@@ -85,7 +85,7 @@ export default function Notes() {
                 <Clipboard valueToCopy={"AIP - " + selectedSubject} label="Copy" />
             </div>
 
-            <div className="flex flex-col gap-4 mt-5 justify-center max-w-md">
+            <div className="flex flex-col gap-4 mt-5 justify-center w-full md:px-24 lg:max-w-md lg:px-0">
                 <div className="w-full">
                     <div className="mb-2 block">
                         <Label htmlFor="issue" value="Problem description" />

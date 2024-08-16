@@ -17,11 +17,12 @@ import { SearchBar } from '@/components/searchbar';
 import { usePathname } from 'next/navigation';
 
 export function NavBar(props: any) {
-  type TitleKeys = "/" | "/notes";
+  type TitleKeys = "/" | "/notes" | "/email";
 
   const titles: Record<TitleKeys, string> = {
     "/": "Dashboard",
     "/notes": "Notes generator",
+    "/email": "Email templates"
   };
 
   const pathname: TitleKeys = usePathname() as TitleKeys;

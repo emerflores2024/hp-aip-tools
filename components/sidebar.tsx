@@ -45,7 +45,7 @@ export function SideBar() {
           <Sidebar.Item href="/notes" as={Link} icon={RiStickyNoteAddLine}>
             Notes generator
           </Sidebar.Item>
-          <Sidebar.Item href="#" icon={MdOutlineEmail}>
+          <Sidebar.Item href="/email" as={Link} icon={MdOutlineEmail}>
             Email templates
           </Sidebar.Item>
           <Sidebar.Collapse icon={BsPrinter} label="All-In Plan Print">
