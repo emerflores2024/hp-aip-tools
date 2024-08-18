@@ -72,9 +72,13 @@ export default function Email(this: any) {
                 </form>
 
                 <div className="flex flex-col w-full px-0 xl:px-10 md:w-4/5 md:mx-auto">
-                    <p className="text-xl text-white font-semibold">Your email template</p>
                     <div className="w-full flex justify-between items-center mt-7">
-                        <div className="grid w-1/2">
+                        <div className="w-full xl:w-fit">
+                            <Tooltip content={tooltip}>
+                                <Button onClick={copyEmail} color="blue">Copy email</Button>
+                            </Tooltip>
+                        </div>
+                        <div className="grid w-full xl:w-1/2 xl:order-last">
                             <div className="relative">
                                 <label htmlFor="npm-install" className="sr-only">
                                     Label
@@ -90,9 +94,7 @@ export default function Email(this: any) {
                                 <Clipboard.WithIconText valueToCopy="npm install flowbite-react" />
                             </div>
                         </div>
-                        <Tooltip content={tooltip}>
-                            <Button onClick={copyEmail} color="blue">Copy email</Button>
-                        </Tooltip>
+
                     </div>
                     <div id="email_body" className="mt-7">
                         <div className="w-full h-16 rounded-lg bg-gradient-to-r from-purple-700 to-cyan-600 flex justify-between items-center px-5">
