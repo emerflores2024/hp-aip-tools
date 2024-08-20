@@ -1,26 +1,57 @@
 'use client'
 
-import { Clipboard } from "flowbite-react"
 import { Label, Select } from "flowbite-react";
-import { useState } from "react";
+import { FormEvent, useState, useRef } from "react";
 import { Button, TextInput } from "flowbite-react";
-import { Tooltip } from "flowbite-react";
-import first_pca from "@/email_templates/first_pca";
+import setFirstPCAEmail from "@/email_resources/templates/first_pca";
+import setSecondPCAEmail from "@/email_resources/templates/second_pca";
+import FirstPCA from "@/email_resources/components/first_pca";
+import SecondPCA from "@/email_resources/components/second_pca";
 
 export default function Email(this: any) {
-    const [selectedSubject, setSelectedSubject] = useState('');
-    const [tooltip, setTooltip] = useState('Copy to clipboard');
+    const formRef = useRef<HTMLFormElement>(null);
 
-    const handleSubjectChange = (event: any) => {
-        setSelectedSubject(event.target.value);
+    const [selectedTemplate, setTemplate] = useState('');
+    const [case_id, setCaseId] = useState('');
+    const [customer, setCustomer] = useState('');
+    const [tooltip, setTooltip] = useState('Copy to clipboard');
+    const [isEmailVisible, setIsEmailVisible] = useState(false);
+
+    const handleTemplateChange = (event: any) => {
+        setTemplate(event.target.value);
     };
 
     const handleCaseInput = (event: React.ChangeEvent<HTMLInputElement>) => {
         event.target.value = event.target.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');
     };
 
-    function copyEmail() {
-        const email_body = first_pca;
+    const formHandling = (event: FormEvent<HTMLFormElement>) => {
+        event.preventDefault();
+        const formData = new FormData(event.currentTarget);
+        setTemplate(formData.get('template') as string);
+        setCustomer(formData.get('customer') as string);
+        setCaseId(formData.get('case_id') as string);
+        setIsEmailVisible(true);
+    };
+
+    const renderTemplate = () => {
+        switch (selectedTemplate) {
+            case 'first_pca':
+                return <FirstPCA case_id={case_id} customer={customer} copyEmail={() => copyEmail("first_pca")} tooltip={tooltip}/>;
+            case 'second_pca':
+                return <SecondPCA case_id={case_id} customer={customer} copyEmail={() => copyEmail("first_pca")} tooltip={tooltip}/>;
+        }
+    };
+
+    function copyEmail(email_template: string) {
+        var email_body = ""
+        const emailProps = { case_id: case_id, customer: customer };
+        switch (email_template) {
+            case 'first_pca':
+                email_body = setFirstPCAEmail(emailProps)
+            case 'second_pca':
+                email_body = setSecondPCAEmail(emailProps)
+        }
         if (email_body) {
           const blob = new Blob([email_body], { type: 'text/html' });
           const clipboardItem = new window.ClipboardItem({ 'text/html': blob });
@@ -32,17 +63,24 @@ export default function Email(this: any) {
           });
         }
       }
+
+    const resetAll = () => {
+        if (formRef.current) {
+          formRef.current.reset();
+          setIsEmailVisible(false);
+        }
+    };
       
 
     return (
         <>
             <div className="flex flex-col xl:flex-row gap-4 items-start">
-                <form className="w-full md:w-4/5 md:mx-auto xl:w-96 flex flex-col gap-4 shrink-0">
+                <form ref={formRef} className="w-full md:w-4/5 md:mx-auto xl:w-96 flex flex-col gap-4 shrink-0" onSubmit={formHandling}>
                     <div className="rounded-lg">
                         <div className="mb-2 block">
-                            <Label htmlFor="subjects" value="Email template" />
+                            <Label htmlFor="template" value="Email template" />
                         </div>
-                        <Select id="subjects" required onChange={handleSubjectChange} value={selectedSubject}>
+                        <Select id="template" name="template" required>
                             <option value="" disabled selected>-- Select a template --</option>
                             <option value="replacement_confirmation">Replacement confirmation</option>
                             <option value="ink_replenishment">Cartridges sent</option>
@@ -57,86 +95,23 @@ export default function Email(this: any) {
                         <div className="mb-2 block">
                             <Label htmlFor="customer" value="Customer's name" />
                         </div>
-                        <TextInput id="customer" placeholder="e.g.: Jhon Doe" type="text" sizing="md" required />
+                        <TextInput id="customer" name="customer" placeholder="e.g.: Jhon Doe" type="text" sizing="md" required />
                     </div>
                     <div>
                         <div className="mb-2 block">
-                            <Label htmlFor="case" value="Case number" />
+                            <Label htmlFor="case_id" value="Case number" />
                         </div>
-                        <TextInput id="case" placeholder="e.g.: 5125963258" type="text" sizing="md" maxLength={10} pattern=".{10}" onInput={handleCaseInput} required />
+                        <TextInput id="case_id" name="case_id" placeholder="e.g.: 5125963258" type="text" sizing="md" maxLength={10} pattern=".{10}" onInput={handleCaseInput} required />
                     </div>
 
 
-                    <div className="w-full mt-2"><Button className="w-full" color="blue">Generate email</Button></div>
+                    <div className="w-full mt-2"><Button className="w-full" type="submit" color="blue">Generate email</Button></div>
+                    <div className="w-full"><Button className="w-full" onClick={resetAll} color="light">Reset all</Button></div>
 
                 </form>
 
-                <div className="flex flex-col w-full px-0 xl:px-10 md:w-4/5 md:mx-auto">
-                    <div className="w-full flex justify-between items-center mt-7">
-                        <div className="w-full xl:w-fit">
-                            <Tooltip content={tooltip}>
-                                <Button onClick={copyEmail} color="blue">Copy email</Button>
-                            </Tooltip>
-                        </div>
-                        <div className="grid w-full xl:w-1/2 xl:order-last">
-                            <div className="relative">
-                                <label htmlFor="npm-install" className="sr-only">
-                                    Label
-                                </label>
-                                <input
-                                    id="npm-install"
-                                    type="text"
-                                    className="col-span-6 block w-full rounded-lg border border-gray-300 bg-gray-50 px-2.5 py-4 text-sm text-gray-500 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-400 dark:placeholder:text-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
-                                    value="All-In Plan Support: Case Follow-Up"
-                                    disabled
-                                    readOnly
-                                />
-                                <Clipboard.WithIconText valueToCopy="npm install flowbite-react" />
-                            </div>
-                        </div>
-
-                    </div>
-                    <div id="email_body" className="mt-7">
-                        <div className="w-full h-16 rounded-lg bg-gradient-to-r from-purple-700 to-cyan-600 flex justify-between items-center px-5">
-                            <h1 className="text-lg font-bold text-white">Hello, Emersito</h1>
-                            <div><img className="h-10" src="https://hp-emailgenerator.web.app/static/hp-logo.png"></img></div>
-                        </div>
-                        <div className="w-full mt-5 px-5">
-                            <p className="text-white text-justify">
-                                After our last conversation, we have kept your case opened to give you a follow up and we have tried to contact you back via phone/email, but we have been unsuccessful.
-                            </p>
-                            <br></br>
-                            <p className="text-white text-justify">
-                                If you still need assistance from us or require any further help in any other related matter, please contact us back quoting your case number or if you consider that the issue has been addressed, you can reply back to this email, so we can close your case.
-                            </p>
-                            <br></br>
-                            <p className="text-white text-justify">
-                                I would like to thank you once again for your cooperation and patience throughout this process, and if there is anything else you would like me to cover for you, please contact us back and we will be more than happy to help you. Take care and have a nice day!
-                            </p>
-                            <br></br>
-                            <p className="text-white text-justify">
-                                Here is your case number for future reference: <strong>5151231321</strong>
-                            </p>
-                            <br></br>
-                            <br></br>
-                            <div className="flex flex-row items-center">
-                                <div>
-                                    <img className="h-20" src="https://cdn-icons-png.freepik.com/512/7555/7555460.png" alt="" />
-                                </div>
-                                <div className="flex flex-col">
-                                    <p className="text-white text-justify">
-                                        <strong>Emerson</strong>
-                                    </p>
-                                    <p className="text-white text-justify">
-                                        HP 24/7 Pro Support | All-In Plan
-                                    </p>
-                                    <p className="text-white text-justify">
-                                        +1 888-447-0148
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div className={`flex flex-col w-full px-0 xl:px-10 md:w-4/5 md:mx-auto ${isEmailVisible ? 'block' : 'hidden'}`}>
+                    {renderTemplate()}
                 </div>
             </div>
 
