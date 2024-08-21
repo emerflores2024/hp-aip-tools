@@ -45,14 +45,17 @@ export default function Email(this: any) {
 
     function copyEmail(email_template: string) {
         var email_body = ""
-        const emailProps = { case_id: case_id, customer: customer };
+        const emailProps = { case_id: case_id, customer: customer, template: email_template };
         switch (email_template) {
             case 'first_pca':
                 email_body = setFirstPCAEmail(emailProps)
+                break
             case 'second_pca':
                 email_body = setSecondPCAEmail(emailProps)
+                break
             case 'final_pca':
                 email_body = setFinalPCAEmail(emailProps)
+                break
         }
         if (email_body) {
             const blob = new Blob([email_body], { type: 'text/html' });
