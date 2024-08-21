@@ -1,7 +1,7 @@
 'use client'
 
 import { Label, Select } from "flowbite-react";
-import { FormEvent, useState, useRef } from "react";
+import { FormEvent, useState, useRef, useEffect } from "react";
 import { Button, TextInput } from "flowbite-react";
 import setFirstPCAEmail from "@/email_resources/templates/first_pca";
 import setSecondPCAEmail from "@/email_resources/templates/second_pca";
@@ -16,10 +16,6 @@ export default function Email(this: any) {
     const [customer, setCustomer] = useState('');
     const [tooltip, setTooltip] = useState('Copy to clipboard');
     const [isEmailVisible, setIsEmailVisible] = useState(false);
-
-    const handleTemplateChange = (event: any) => {
-        setTemplate(event.target.value);
-    };
 
     const handleCaseInput = (event: React.ChangeEvent<HTMLInputElement>) => {
         event.target.value = event.target.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');
@@ -37,9 +33,9 @@ export default function Email(this: any) {
     const renderTemplate = () => {
         switch (selectedTemplate) {
             case 'first_pca':
-                return <FirstPCA case_id={case_id} customer={customer} copyEmail={() => copyEmail("first_pca")} tooltip={tooltip}/>;
+                return <FirstPCA case_id={case_id} customer={customer} copyEmail={() => copyEmail("first_pca")} tooltip={tooltip} />;
             case 'second_pca':
-                return <SecondPCA case_id={case_id} customer={customer} copyEmail={() => copyEmail("first_pca")} tooltip={tooltip}/>;
+                return <SecondPCA case_id={case_id} customer={customer} copyEmail={() => copyEmail("first_pca")} tooltip={tooltip} />;
         }
     };
 
@@ -53,24 +49,24 @@ export default function Email(this: any) {
                 email_body = setSecondPCAEmail(emailProps)
         }
         if (email_body) {
-          const blob = new Blob([email_body], { type: 'text/html' });
-          const clipboardItem = new window.ClipboardItem({ 'text/html': blob });
-          navigator.clipboard.write([clipboardItem]).then(() => {
-            setTooltip("Copied");
-            setTimeout(() => {
-              setTooltip("Copy to clipboard");
-            }, 5000);
-          });
+            const blob = new Blob([email_body], { type: 'text/html' });
+            const clipboardItem = new window.ClipboardItem({ 'text/html': blob });
+            navigator.clipboard.write([clipboardItem]).then(() => {
+                setTooltip("Copied");
+                setTimeout(() => {
+                    setTooltip("Copy to clipboard");
+                }, 5000);
+            });
         }
-      }
+    }
 
     const resetAll = () => {
         if (formRef.current) {
-          formRef.current.reset();
-          setIsEmailVisible(false);
+            formRef.current.reset();
+            setIsEmailVisible(false);
         }
     };
-      
+
 
     return (
         <>
@@ -114,7 +110,6 @@ export default function Email(this: any) {
                     {renderTemplate()}
                 </div>
             </div>
-
         </>
     )
 }
