@@ -3,8 +3,8 @@
 import { Button, Tooltip } from "flowbite-react";
 import { Clipboard } from "flowbite-react"
 
-export default function FirstPCA(props: any) {
-    const subject = `HP All-In Plan Support: Follow up - Case #${props.case_id}`;
+export default function FinalPCA(props: any) {
+    const subject = `HP All-In Plan Support: We're closing your case - Case #${props.case_id}`;
     const user = localStorage.getItem('user')
 
     return (
@@ -41,15 +41,15 @@ export default function FirstPCA(props: any) {
                 </div>
                 <div className="w-full mt-5 px-5">
                     <p className="text-white text-justify">
-                        After our last conversation, we have kept your case opened to give you a follow up and we have tried to contact you back via phone/email, but we have been unsuccessful.
+                        We hope you are doing well! We have been trying to contact you, but we were unsuccessful. As we haven't heard from you, we will proceed to close your case.
                     </p>
                     <br></br>
                     <p className="text-white text-justify">
-                        If you still need assistance from us or require any further help in any other related matter, please contact us back quoting your case number or if you consider that the issue has been addressed, you can reply back to this email, so we can close your case.
+                        However, if you still need assistance from us or require any further help in any other related matter, please contact us back quoting your case number, so we can take it as reference to assist you.
                     </p>
                     <br></br>
                     <p className="text-white text-justify">
-                        I would like to thank you once again for your cooperation and patience throughout this process, and if there is anything else you would like me to cover for you, please contact us back and we will be more than happy to help you. Take care and have a nice day!
+                        Thank you for your time and for your loyalty to HP. Take care and have a nice day!
                     </p>
                     <br></br>
                     <p className="text-white text-justify">

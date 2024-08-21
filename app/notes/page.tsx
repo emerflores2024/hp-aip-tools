@@ -59,7 +59,7 @@ ${resolution}
 
     return (
         <>
-            <div className="flex items-end gap-2 w-full md:px-24 lg:max-w-md lg:px-0">
+            <div className="flex items-end gap-2 w-full md:px-24 lg:max-w-md mx-auto lg:px-0">
                 <div className="w-full rounded-lg">
                     <div className="mb-2 block">
                         <Label htmlFor="subjects" value="Case subject" />
@@ -85,26 +85,26 @@ ${resolution}
                 <Clipboard valueToCopy={"AIP - " + selectedSubject} label="Copy" />
             </div>
 
-            <div className="flex flex-col gap-4 mt-5 justify-center w-full md:px-24 lg:max-w-md lg:px-0">
+            <div className="flex flex-col gap-4 mt-5 justify-center w-full md:px-24 lg:max-w-md lg:px-0 mx-auto">
                 <div className="w-full">
                     <div className="mb-2 block">
                         <Label htmlFor="issue" value="Problem description" />
                     </div>
-                    <Textarea onChange={handleIssueChange} id="issue" name="issue" placeholder="Enter the customer's issue..." required rows={4} value={issue}/>
+                    <Textarea onChange={handleIssueChange} id="issue" name="issue" placeholder="Enter the customer's issue..." required rows={6} value={issue}/>
                 </div>
 
                 <div className="w-full">
                     <div className="mb-2 block">
                         <Label htmlFor="troubleshooting" value="Troubleshooting" />
                     </div>
-                    <Textarea onChange={handleTroubleshootingChange} id="troubleshooting" name="troubleshooting" placeholder="Enter the steps completed to resolve problem..." required rows={4} value={troubleshooting}/>
+                    <Textarea onChange={handleTroubleshootingChange} id="troubleshooting" name="troubleshooting" placeholder="Enter the steps completed to resolve problem..." required rows={6} value={troubleshooting}/>
                 </div>
 
                 <div className="w-full">
                     <div className="mb-2 block">
                         <Label htmlFor="resolution" value="Resolution" />
                     </div>
-                    <Textarea onChange={handleResolutionChange} id="resolution" name="resolution" placeholder="Enter the resolution provided..." required rows={4} value={resolution}/>
+                    <Textarea onChange={handleResolutionChange} id="resolution" name="resolution" placeholder="Enter the resolution provided..." required rows={6} value={resolution}/>
                 </div>
                 <div className="w-full mt-2 flex justify-between">
                     <Button onClick={() => resetAll()} color="light" >Reset all</Button>

@@ -5,8 +5,10 @@ import { FormEvent, useState, useRef, useEffect } from "react";
 import { Button, TextInput } from "flowbite-react";
 import setFirstPCAEmail from "@/email_resources/templates/first_pca";
 import setSecondPCAEmail from "@/email_resources/templates/second_pca";
+import setFinalPCAEmail from "@/email_resources/templates/final_pca";
 import FirstPCA from "@/email_resources/components/first_pca";
 import SecondPCA from "@/email_resources/components/second_pca";
+import FinalPCA from "@/email_resources/components/final_pca";
 
 export default function Email(this: any) {
     const formRef = useRef<HTMLFormElement>(null);
@@ -35,7 +37,9 @@ export default function Email(this: any) {
             case 'first_pca':
                 return <FirstPCA case_id={case_id} customer={customer} copyEmail={() => copyEmail("first_pca")} tooltip={tooltip} />;
             case 'second_pca':
-                return <SecondPCA case_id={case_id} customer={customer} copyEmail={() => copyEmail("first_pca")} tooltip={tooltip} />;
+                return <SecondPCA case_id={case_id} customer={customer} copyEmail={() => copyEmail("second_pca")} tooltip={tooltip} />;
+            case 'final_pca':
+                return <FinalPCA case_id={case_id} customer={customer} copyEmail={() => copyEmail("final_pca")} tooltip={tooltip} />;
         }
     };
 
@@ -47,6 +51,8 @@ export default function Email(this: any) {
                 email_body = setFirstPCAEmail(emailProps)
             case 'second_pca':
                 email_body = setSecondPCAEmail(emailProps)
+            case 'final_pca':
+                email_body = setFinalPCAEmail(emailProps)
         }
         if (email_body) {
             const blob = new Blob([email_body], { type: 'text/html' });
