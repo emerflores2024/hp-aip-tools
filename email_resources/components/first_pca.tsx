@@ -35,7 +35,7 @@ export default function FirstPCA(props: any) {
 
             </div>
             <div id="email_body" className="mt-7">
-                <div className="w-full h-16 rounded-lg bg-gradient-to-r from-purple-700 to-cyan-600 flex justify-between items-center px-5">
+                <div className="w-full h-16 rounded-lg bg-gradient-to-r from-violet-700 to-cyan-600 flex justify-between items-center px-5">
                     <h1 className="text-lg font-bold text-white">Hello, {props.customer}</h1>
                     <div><img className="h-10" src="https://hp-emailgenerator.web.app/static/hp-logo.png"></img></div>
                 </div>
