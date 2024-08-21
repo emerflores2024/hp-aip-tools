@@ -73,6 +73,9 @@ export default function SecondPCA(props: any) {
                             </p>
                         </div>
                     </div>
+                    <p className="text-gray-300 mt-16 text-sm text-center w-full lg:w-4/5 mx-auto">
+                        This email was sent to alert you about important updates to your HP account. You can manage your account online by going to <a className="text-cyan-400" href="https://hpsmart.com">https://hpsmart.com</a> | © Copyright 2024 HP Development Company, L.P.
+                    </p>
                 </div>
             </div>
         </>

@@ -1,14 +1,16 @@
 'use client'
 
-import { Label, Select } from "flowbite-react";
+import { Label, Select, Textarea } from "flowbite-react";
 import { FormEvent, useState, useRef, useEffect } from "react";
 import { Button, TextInput } from "flowbite-react";
 import setFirstPCAEmail from "@/email_resources/templates/first_pca";
 import setSecondPCAEmail from "@/email_resources/templates/second_pca";
 import setFinalPCAEmail from "@/email_resources/templates/final_pca";
+import setEscResolutionEmail from "@/email_resources/templates/escalation_resolution";
 import FirstPCA from "@/email_resources/components/first_pca";
 import SecondPCA from "@/email_resources/components/second_pca";
 import FinalPCA from "@/email_resources/components/final_pca";
+import EscalationResolution from "@/email_resources/components/escalation_resolution";
 
 export default function Email(this: any) {
     const formRef = useRef<HTMLFormElement>(null);
@@ -16,12 +18,25 @@ export default function Email(this: any) {
     const [selectedTemplate, setTemplate] = useState('');
     const [case_id, setCaseId] = useState('');
     const [customer, setCustomer] = useState('');
+    const [resolution, setResolution] = useState('');
     const [tooltip, setTooltip] = useState('Copy to clipboard');
     const [isEmailVisible, setIsEmailVisible] = useState(false);
+
+    const [isResolutionVisible, setisResolutionVisible] = useState(false);
 
     const handleCaseInput = (event: React.ChangeEvent<HTMLInputElement>) => {
         event.target.value = event.target.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');
     };
+
+    const handleTemplateChange = (event: any) => {
+        const value = event.target.value;
+        if (value === "escalation_resolution") {
+            setisResolutionVisible(true);
+        } else {
+            setisResolutionVisible(false);
+        }
+    };
+    
 
     const formHandling = (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault();
@@ -29,6 +44,9 @@ export default function Email(this: any) {
         setTemplate(formData.get('template') as string);
         setCustomer(formData.get('customer') as string);
         setCaseId(formData.get('case_id') as string);
+        if(formData.get('resolution') as string){
+            setResolution(formData.get('resolution') as string)
+        }
         setIsEmailVisible(true);
     };
 
@@ -40,12 +58,14 @@ export default function Email(this: any) {
                 return <SecondPCA case_id={case_id} customer={customer} copyEmail={() => copyEmail("second_pca")} tooltip={tooltip} />;
             case 'final_pca':
                 return <FinalPCA case_id={case_id} customer={customer} copyEmail={() => copyEmail("final_pca")} tooltip={tooltip} />;
+            case 'escalation_resolution':
+                return <EscalationResolution case_id={case_id} customer={customer} resolution={resolution} copyEmail={() => copyEmail("escalation_resolution")} tooltip={tooltip} />;
         }
     };
 
     function copyEmail(email_template: string) {
         var email_body = ""
-        const emailProps = { case_id: case_id, customer: customer, template: email_template };
+        const emailProps = { case_id: case_id, customer: customer, resolution: resolution };
         switch (email_template) {
             case 'first_pca':
                 email_body = setFirstPCAEmail(emailProps)
@@ -55,6 +75,9 @@ export default function Email(this: any) {
                 break
             case 'final_pca':
                 email_body = setFinalPCAEmail(emailProps)
+                break
+            case 'escalation_resolution':
+                email_body = setEscResolutionEmail(emailProps)
                 break
         }
         if (email_body) {
@@ -85,7 +108,7 @@ export default function Email(this: any) {
                         <div className="mb-2 block">
                             <Label htmlFor="template" value="Email template" />
                         </div>
-                        <Select id="template" name="template" required>
+                        <Select id="template" name="template" required onChange={handleTemplateChange}>
                             <option value="" disabled selected>-- Select a template --</option>
                             <option value="replacement_confirmation">Replacement confirmation</option>
                             <option value="ink_replenishment">Cartridges sent</option>
@@ -108,6 +131,14 @@ export default function Email(this: any) {
                         </div>
                         <TextInput id="case_id" name="case_id" placeholder="e.g.: 5125963258" type="text" sizing="md" maxLength={10} pattern=".{10}" onInput={handleCaseInput} required />
                     </div>
+                    {isResolutionVisible && (
+                        <div>
+                            <div className="mb-2 block">
+                                <Label htmlFor="resolution" value="Escalation resolution" />
+                            </div>
+                            <Textarea id="resolution" name="resolution" placeholder="Enter the escalation resolution provided..." required rows={6}/>
+                        </div>
+                    )}
 
 
                     <div className="w-full mt-2"><Button className="w-full" type="submit" color="blue">Generate email</Button></div>

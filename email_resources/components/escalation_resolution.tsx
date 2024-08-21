@@ -3,8 +3,8 @@
 import { Button, Tooltip } from "flowbite-react";
 import { Clipboard } from "flowbite-react"
 
-export default function FirstPCA(props: any) {
-    const subject = `HP All-In Plan Support: Follow up - Case #${props.case_id}`;
+export default function EscalationResolution(props: any) {
+    const subject = `HP All-In Plan Support: Escalation resolution - Case #${props.case_id}`;
     const user = localStorage.getItem('user')
 
     return (
@@ -41,15 +41,15 @@ export default function FirstPCA(props: any) {
                 </div>
                 <div className="w-full mt-5 px-5">
                     <p className="text-white text-justify">
-                        After our last conversation, we have kept your case opened to give you a follow up and we have tried to contact you back via phone/email, but we have been unsuccessful.
+                        This email is just to inform you about the resolution of the most recent case you have opened with us and that was escalated a couple of days ago. This is the resolution provided by our support team:
+                    </p>
+                    <br></br>
+                    <p className="text-white text-justify italic">
+                        {props.resolution}
                     </p>
                     <br></br>
                     <p className="text-white text-justify">
-                        If you still need assistance from us or require any further help in any other related matter, please contact us back quoting your case number or if you consider that the issue has been addressed, you can reply back to this email, so we can close your case.
-                    </p>
-                    <br></br>
-                    <p className="text-white text-justify">
-                        I would like to thank you once again for your cooperation and patience throughout this process, and if there is anything else you would like me to cover for you, please contact us back and we will be more than happy to help you. Take care and have a nice day!
+                        If you still have any questions about the resolution, you can reply back to this email or you can contact us back and we will be more than happy to help you. Take care and have a wonderful day!
                     </p>
                     <br></br>
                     <p className="text-white text-justify">

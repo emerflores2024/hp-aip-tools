@@ -20,6 +20,10 @@ export default function setFirstPCAEmail(props: any){
                 <div style="display: flex; flex-direction: column; gap: 10px; padding-top: 15px;"><p style="color: #1f2937; text-align: justify; margin:0"><strong>${user}</strong></p><p style="color: #1f2937; text-align: justify; margin:0">HP 24/7 Pro Support | All-In Plan</p><p style="color: #1f2937; text-align: justify; margin:0">+1 888-447-0148</p>
                 </div>
             </div>
+            <p style="color: #3d434a; margin-top: 3rem; font-size: 0.875rem; text-align: center;">
+                This email was sent to alert you about important updates to your HP account. You can manage your account online by going to 
+                <a style="color: #2383bd;" href="https://hpsmart.com">https://hpsmart.com</a> | © Copyright 2024 HP Development Company, L.P.
+            </p>
         </div>
     </div>
     `;
