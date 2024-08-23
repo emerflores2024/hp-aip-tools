@@ -1,6 +1,6 @@
 'use client'
 
-import { Label, Select, Textarea } from "flowbite-react";
+import { Label, Select, Textarea, Alert   } from "flowbite-react";
 import { FormEvent, useState, useRef, useEffect } from "react";
 import { Button, TextInput } from "flowbite-react";
 import setFirstPCAEmail from "@/email_resources/templates/first_pca";
@@ -17,6 +17,7 @@ import EscalationResolution from "@/email_resources/components/escalation_resolu
 import ReplacementOrder from "@/email_resources/components/replacement_confirmation";
 import InkReplenishment from "@/email_resources/components/ink_replenishment";
 import LMILink from "@/email_resources/components/lmi_link";
+import { HiInformationCircle } from "react-icons/hi";
 
 export default function Email(this: any) {
     const formRef = useRef<HTMLFormElement>(null);
@@ -31,6 +32,9 @@ export default function Email(this: any) {
     const [isCaseVisible, setisCaseVisible] = useState(true);
     const [isResolutionVisible, setisResolutionVisible] = useState(false);
     const [isReplacementVisible, setisReplacementVisible] = useState(false);
+    const [user, setUser] = useState<string | null>(null);
+    const [formSubmitted, setFormSubmitted] = useState(false);
+    const [showToast, setShowToast] = useState(false);
 
     const handleCaseInput = (event: React.ChangeEvent<HTMLInputElement>) => {
         event.target.value = event.target.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');
@@ -58,18 +62,29 @@ export default function Email(this: any) {
 
     const formHandling = (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault();
-        const formData = new FormData(event.currentTarget);
-        setTemplate(formData.get('template') as string);
-        setCustomer(formData.get('customer') as string);
-        setCaseId(formData.get('case_id') as string);
-        if(formData.get('resolution') as string){
-            setResolution(formData.get('resolution') as string)
+        setFormSubmitted(!formSubmitted);
+        if(user){
+            const formData = new FormData(event.currentTarget);
+            setTemplate(formData.get('template') as string);
+            setCustomer(formData.get('customer') as string);
+            setCaseId(formData.get('case_id') as string);
+            if(formData.get('resolution') as string){
+                setResolution(formData.get('resolution') as string)
+            }
+            if(formData.get('replacement_order') as string){
+                setReplacementOrder(formData.get('replacement_order') as string)
+            }
+            setIsEmailVisible(true);
         }
-        if(formData.get('replacement_order') as string){
-            setReplacementOrder(formData.get('replacement_order') as string)
+        else{
+            setShowToast(true)
         }
-        setIsEmailVisible(true);
     };
+
+    useEffect(() => {
+        const storedUser = localStorage.getItem('user');
+        setUser(storedUser);
+    }, [formSubmitted]);
 
     const renderTemplate = () => {
         switch (selectedTemplate) {
@@ -143,6 +158,13 @@ export default function Email(this: any) {
         <>
             <div className="flex flex-col xl:flex-row gap-4 items-start">
                 <form ref={formRef} className="w-full md:w-4/5 md:mx-auto xl:w-96 flex flex-col gap-4 shrink-0" onSubmit={formHandling}>
+                    {showToast && (
+                        <div>
+                            <Alert color="failure" icon={HiInformationCircle}>
+                                <span className="font-medium">Your name is missing!</span> Please, set your name first.
+                            </Alert>
+                        </div> 
+                    )}
                     <div className="rounded-lg">
                         <div className="mb-2 block">
                             <Label htmlFor="template" value="Email template" />

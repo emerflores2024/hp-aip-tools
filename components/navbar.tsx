@@ -35,8 +35,7 @@ export function NavBar(props: any) {
   const pathname: TitleKeys = usePathname() as TitleKeys;
 
   useEffect(() => {
-    const storedUser = localStorage.getItem('user');
-    setUser(storedUser);
+    localStorage.removeItem("user")
 }, []);
 
 useEffect(() => {
@@ -90,7 +89,7 @@ const setUserSession = () => {
             <BsThreeDots className='text-2xl' />
           </a>
         </Popover>
-          {user ? `Welcome, ${user}` : ``}
+          {user ? `Welcome, ${user}` : `Your name is not set`}
         </p>
         <NavbarToggle className="ml-3"/>
       </div>

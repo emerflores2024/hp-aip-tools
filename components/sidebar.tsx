@@ -1,6 +1,6 @@
 'use client';
 
-import { Sidebar } from 'flowbite-react';
+import { Button, Sidebar } from 'flowbite-react';
 import {HiHome} from 'react-icons/hi';
 import { HiBriefcase } from 'react-icons/hi';
 import { HiPlus } from 'react-icons/hi';
@@ -59,6 +59,25 @@ export function SideBar() {
           </Sidebar.Collapse>
         </Sidebar.ItemGroup>
       </Sidebar.Items>
+
+      <div className='fixed bottom-5 text-white w-56 ml-1'>
+        <div className='flex flex-col gap-4 items-center justify-center'>
+            <div className='shrink-0'>
+              <img className="h-16" src="https://cdn-icons-png.freepik.com/512/7555/7555460.png" alt="" />
+            </div>
+            <div className="flex flex-col truncate">
+              <p className="text-white text-center truncate">
+                <strong>Emersito</strong>
+              </p>
+              <p className="text-gray-200 text-sm text-center">
+                HP Advisor
+              </p>
+            </div>
+          <div className='w-full'>
+            <Button className='w-full' color="blue">Change my name</Button>
+          </div>
+        </div>
+      </div>
     </Sidebar>
   );
 }
