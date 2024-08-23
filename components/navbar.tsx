@@ -24,12 +24,12 @@ export function NavBar(props: any) {
   const [userInput, setUserInput] = useState('');
   const [openModal, setOpenModal] = useState(false);
 
-  type TitleKeys = "/" | "/notes" | "/email";
+  type TitleKeys = "/" | "/paas/notes" | "/paas/email";
 
   const titles: Record<TitleKeys, string> = {
     "/": "Dashboard",
-    "/notes": "Notes generator",
-    "/email": "Email templates"
+    "/paas/notes": "Notes generator",
+    "/paas/email": "Email templates"
   };
 
   const pathname: TitleKeys = usePathname() as TitleKeys;

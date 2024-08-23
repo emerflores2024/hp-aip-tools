@@ -10,6 +10,12 @@ import { IoHomeOutline } from "react-icons/io5";
 import { BsPrinter } from "react-icons/bs";
 import { FaLaptop } from "react-icons/fa";
 import { NavBar } from '@/components/navbar';
+import { FcPrint } from "react-icons/fc";
+import { FcReadingEbook } from "react-icons/fc";
+import { FcHome } from "react-icons/fc";
+
+
+
 
 import type { CustomFlowbiteTheme } from 'flowbite-react';
 import Link from 'next/link';
@@ -31,29 +37,22 @@ export function SideBar() {
     >
       <Sidebar.Logo
         href="#"
-        img="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/HP_logo_2012.svg/2048px-HP_logo_2012.svg.png"
+        img="https://hp-emailgenerator.web.app/static/hp-logo.png"
         imgAlt="Flowbite logo"
         className="pt-2"
       >
-        All-In Plan Tools
+        My Tools
       </Sidebar.Logo>
       <Sidebar.Items>
         <Sidebar.ItemGroup>
-          <Sidebar.Item href="/" as={Link} icon={IoHomeOutline}>
+          <Sidebar.Item href="/" as={Link} icon={FcHome}>
             Home
           </Sidebar.Item>
-          <Sidebar.Item href="/notes" as={Link} icon={RiStickyNoteAddLine}>
-            Notes generator
-          </Sidebar.Item>
-          <Sidebar.Item href="/email" as={Link} icon={MdOutlineEmail}>
-            Email templates
-          </Sidebar.Item>
-          <Sidebar.Collapse icon={BsPrinter} label="All-In Plan Print">
-            <Sidebar.Item href="#">Notes</Sidebar.Item>
-            <Sidebar.Item href="#">Email</Sidebar.Item>
-            <Sidebar.Item href="#">Closed</Sidebar.Item>
+          <Sidebar.Collapse icon={FcPrint} label="All-In Plan Print">
+            <Sidebar.Item href="/paas/notes" as={Link}>Notes generator</Sidebar.Item>
+            <Sidebar.Item href="/paas/email" as={Link}>Email templates</Sidebar.Item>
           </Sidebar.Collapse>
-          <Sidebar.Collapse icon={FaLaptop} label="Laptop subscription">
+          <Sidebar.Collapse icon={FcReadingEbook} label="Laptop subscription">
             <Sidebar.Item href="#">Pending</Sidebar.Item>
             <Sidebar.Item href="#">Resolved</Sidebar.Item>
             <Sidebar.Item href="#">Closed</Sidebar.Item>
