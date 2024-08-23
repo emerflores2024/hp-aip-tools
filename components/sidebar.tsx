@@ -49,8 +49,8 @@ export function SideBar() {
             Email templates
           </Sidebar.Item>
           <Sidebar.Collapse icon={BsPrinter} label="All-In Plan Print">
-            <Sidebar.Item href="#">Pending</Sidebar.Item>
-            <Sidebar.Item href="#">Resolved</Sidebar.Item>
+            <Sidebar.Item href="#">Notes</Sidebar.Item>
+            <Sidebar.Item href="#">Email</Sidebar.Item>
             <Sidebar.Item href="#">Closed</Sidebar.Item>
           </Sidebar.Collapse>
           <Sidebar.Collapse icon={FaLaptop} label="Laptop subscription">
