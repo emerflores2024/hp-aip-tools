@@ -86,15 +86,15 @@ export default function Email(this: any) {
             case 'first_pca':
                 return <FirstPCA case_id={case_id} customer={customer} copyEmail={() => copyEmail(selectedTemplate)} tooltip={tooltip} user={userName}/>;
             case 'second_pca':
-                return <SecondPCA case_id={case_id} customer={customer} copyEmail={() => copyEmail(selectedTemplate)} tooltip={tooltip} />;
+                return <SecondPCA case_id={case_id} customer={customer} copyEmail={() => copyEmail(selectedTemplate)} tooltip={tooltip} user={userName}/>;
             case 'final_pca':
-                return <FinalPCA case_id={case_id} customer={customer} copyEmail={() => copyEmail(selectedTemplate)} tooltip={tooltip} />;
+                return <FinalPCA case_id={case_id} customer={customer} copyEmail={() => copyEmail(selectedTemplate)} tooltip={tooltip} user={userName}/>;
             case 'escalation_resolution':
-                return <EscalationResolution case_id={case_id} customer={customer} resolution={resolution} copyEmail={() => copyEmail(selectedTemplate)} tooltip={tooltip} />;
+                return <EscalationResolution case_id={case_id} customer={customer} resolution={resolution} copyEmail={() => copyEmail(selectedTemplate)} tooltip={tooltip} user={userName}/>;
             case 'replacement_confirmation':
-                return <ReplacementOrder case_id={case_id} customer={customer} order={replacementOrder} copyEmail={() => copyEmail(selectedTemplate)} tooltip={tooltip} />;
+                return <ReplacementOrder case_id={case_id} customer={customer} order={replacementOrder} copyEmail={() => copyEmail(selectedTemplate)} tooltip={tooltip} user={userName}/>;
             case 'ink_replenishment':
-                return <InkReplenishment case_id={case_id} customer={customer} copyEmail={() => copyEmail(selectedTemplate)} tooltip={tooltip} />;
+                return <InkReplenishment case_id={case_id} customer={customer} copyEmail={() => copyEmail(selectedTemplate)} tooltip={tooltip} user={userName}/>;
             case 'lmi_link':
                 return <LMILink customer={customer} copyEmail={() => copyEmail(selectedTemplate)} tooltip={tooltip} />;
         }

@@ -6,7 +6,6 @@ import { Clipboard } from "flowbite-react"
 
 export default function FinalPCA(props: any) {
     const subject = `HP All-In Plan Support: We're closing your case - Case #${props.case_id}`;
-    const { userName, setUserName } = useUser();
 
     return (
         <>
@@ -64,7 +63,7 @@ export default function FinalPCA(props: any) {
                         </div>
                         <div className="flex flex-col">
                             <p className="text-white text-justify">
-                                <strong>{userName}</strong>
+                                <strong>{props.user}</strong>
                             </p>
                             <p className="text-white text-justify">
                                 HP 24/7 Pro Support | All-In Plan
