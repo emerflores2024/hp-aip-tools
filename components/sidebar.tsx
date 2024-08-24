@@ -14,7 +14,7 @@ const customTheme: CustomFlowbiteTheme['sidebar'] = {
   root: {
     "base": "h-full dark",
     inner:
-      'h-full overflow-y-auto overflow-x-hidden bg-gray-50 px-3 py-4 dark:bg-gray-900',
+      'h-full overflow-y-auto overflow-x-hidden bg-gray-50 px-3 py-4 dark:bg-gray-800',
   },
 };
 
@@ -44,7 +44,7 @@ export function SideBar() {
           <Sidebar.Item href="/" as={Link} icon={FcHome}>
             Home
           </Sidebar.Item>
-          <Sidebar.Collapse icon={FcPrint} label="All-In Plan Print">
+          <Sidebar.Collapse icon={FcPrint} label="All-In Plan">
             <Sidebar.Item href="/paas/notes" as={Link}>Notes generator</Sidebar.Item>
             <Sidebar.Item href="/paas/email" as={Link}>Email templates</Sidebar.Item>
           </Sidebar.Collapse>
@@ -84,7 +84,7 @@ export function SideBar() {
           }
             
           <div className='w-full'>
-            <Button onClick={openModal} className='w-full' color="blue">{userName ? "Change my name" : "Set my name"}</Button>
+            <Button onClick={openModal} className='w-full' color="light">{userName ? "Change my name" : "Set my name"}</Button>
           </div>
         </div>
       </div>

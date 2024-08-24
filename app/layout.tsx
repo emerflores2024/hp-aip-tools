@@ -22,7 +22,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html className='bg-gray-800' lang="en" suppressHydrationWarning>
+    <html className='bg-gray-900' lang="en" suppressHydrationWarning>
       <head>
         <ThemeModeScript />
       </head>
