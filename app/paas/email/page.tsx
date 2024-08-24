@@ -18,9 +18,11 @@ import ReplacementOrder from "@/email_resources/components/replacement_confirmat
 import InkReplenishment from "@/email_resources/components/ink_replenishment";
 import LMILink from "@/email_resources/components/lmi_link";
 import { HiInformationCircle } from "react-icons/hi";
+import { useUser } from "@/app/context_provider";
 
 export default function Email(this: any) {
     const formRef = useRef<HTMLFormElement>(null);
+    const { userName, setUserName } = useUser();
 
     const [selectedTemplate, setTemplate] = useState('');
     const [case_id, setCaseId] = useState('');
@@ -32,8 +34,6 @@ export default function Email(this: any) {
     const [isCaseVisible, setisCaseVisible] = useState(true);
     const [isResolutionVisible, setisResolutionVisible] = useState(false);
     const [isReplacementVisible, setisReplacementVisible] = useState(false);
-    const [user, setUser] = useState<string | null>(null);
-    const [formSubmitted, setFormSubmitted] = useState(false);
     const [showToast, setShowToast] = useState(false);
 
     const handleCaseInput = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -62,8 +62,8 @@ export default function Email(this: any) {
 
     const formHandling = (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault();
-        setFormSubmitted(!formSubmitted);
-        if(user){
+        setShowToast(false)
+        if(userName){
             const formData = new FormData(event.currentTarget);
             setTemplate(formData.get('template') as string);
             setCustomer(formData.get('customer') as string);
@@ -81,15 +81,10 @@ export default function Email(this: any) {
         }
     };
 
-    useEffect(() => {
-        const storedUser = localStorage.getItem('user');
-        setUser(storedUser);
-    }, [formSubmitted]);
-
     const renderTemplate = () => {
         switch (selectedTemplate) {
             case 'first_pca':
-                return <FirstPCA case_id={case_id} customer={customer} copyEmail={() => copyEmail(selectedTemplate)} tooltip={tooltip} />;
+                return <FirstPCA case_id={case_id} customer={customer} copyEmail={() => copyEmail(selectedTemplate)} tooltip={tooltip} user={userName}/>;
             case 'second_pca':
                 return <SecondPCA case_id={case_id} customer={customer} copyEmail={() => copyEmail(selectedTemplate)} tooltip={tooltip} />;
             case 'final_pca':
@@ -107,7 +102,7 @@ export default function Email(this: any) {
 
     function copyEmail(email_template: string) {
         var email_body = ""
-        const emailProps = { case_id: case_id, customer: customer, resolution: resolution, order: replacementOrder };
+        const emailProps = { case_id: case_id, customer: customer, resolution: resolution, order: replacementOrder, user: userName };
         switch (email_template) {
             case 'first_pca':
                 email_body = setFirstPCAEmail(emailProps)

@@ -1,29 +1,15 @@
 'use client'
 
 import {
-  Avatar,
-  Dropdown,
-  DropdownDivider,
-  DropdownHeader,
-  DropdownItem,
   Navbar,
   NavbarBrand,
   NavbarCollapse,
-  NavbarLink,
   NavbarToggle,
 } from 'flowbite-react';
 
 import { usePathname } from 'next/navigation';
-import { useEffect, useState } from 'react';
-import { BsThreeDots } from "react-icons/bs";
-import { Popover } from "flowbite-react";
-import { Modal, Button, TextInput } from "flowbite-react";
 
-export function NavBar(props: any) {
-  const [user, setUser] = useState<string | null>(null);
-  const [userInput, setUserInput] = useState('');
-  const [openModal, setOpenModal] = useState(false);
-
+export function NavBar() {
   type TitleKeys = "/" | "/paas/notes" | "/paas/email";
 
   const titles: Record<TitleKeys, string> = {

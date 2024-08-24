@@ -1,11 +1,12 @@
 'use client'
 
+import { useUser } from "@/app/context_provider";
 import { Button, Tooltip } from "flowbite-react";
 import { Clipboard } from "flowbite-react"
 
 export default function ReplacementOrder(props: any) {
     const subject = `HP All-In Plan Support: Replacement order confirmation #${props.order}`;
-    const user = localStorage.getItem('user')
+    const { userName, setUserName } = useUser();
 
     return (
         <>
@@ -63,7 +64,7 @@ export default function ReplacementOrder(props: any) {
                         </div>
                         <div className="flex flex-col">
                             <p className="text-white text-justify">
-                                <strong>{user}</strong>
+                                <strong>{userName}</strong>
                             </p>
                             <p className="text-white text-justify">
                                 HP 24/7 Pro Support | All-In Plan

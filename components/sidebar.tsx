@@ -19,7 +19,9 @@ const customTheme: CustomFlowbiteTheme['sidebar'] = {
 };
 
 export function SideBar() {
-  const [isModalOpened, setIsModalOpened] = useState(false)
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const openModal = () => setIsModalOpen(true);
+  const closeModal = () => setIsModalOpen(false);
   const { userName, setUserName } = useUser();
 
   return (
@@ -82,13 +84,13 @@ export function SideBar() {
           }
             
           <div className='w-full'>
-            <Button onClick={() => setIsModalOpened(true)} className='w-full' color="blue">{userName ? "Change my name" : "Set my name"}</Button>
+            <Button onClick={openModal} className='w-full' color="blue">{userName ? "Change my name" : "Set my name"}</Button>
           </div>
         </div>
       </div>
     </Sidebar>
 
-    {isModalOpened && <UserModal onClose={() => setIsModalOpened(false)} />}
+    <UserModal onClose={closeModal} isOpened={isModalOpen} />
     </>
     
   );

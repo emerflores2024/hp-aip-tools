@@ -5,7 +5,6 @@ import { Clipboard } from "flowbite-react";
 
 export default function LMILink(props: any) {
     const subject = `HP All-In Plan Support: Remote Connection Link`;
-    const user = localStorage.getItem('user')
 
     return (
         <>

@@ -4,27 +4,24 @@ import { Button, Modal, TextInput } from "flowbite-react";
 import { useEffect, useState } from "react";
 import { useUser } from '@/app/context_provider';
 
-const UserModal: React.FC<{ onClose: () => void }> = ({ onClose }) => {
+const UserModal: React.FC<{ onClose: () => void, isOpened: boolean }> = ({ onClose, isOpened }) => {
     const { userName, setUserName } = useUser();
     const [userInput, setUserInput] = useState("")
-    const [openModal, setOpenModal] = useState(true);
   
     const handleUserInput = (event: any) => {
         setUserInput(event.target.value);
     };
   
     const setUserSession = () => {
-        localStorage.setItem('user', userInput)
-        const storedUser = localStorage.getItem('user');
-        if(storedUser){
-            setUserName(storedUser);
-            setOpenModal(false);
+        if(userInput){
+            setUserName(userInput);
+            onClose();
         }
     };
 
     return (
         <>
-            <Modal className="dark" show={openModal} size="md" popup onClose={onClose}>
+            <Modal className="dark" show={isOpened} size="md" popup onClose={onClose}>
                 <Modal.Header />
                 <Modal.Body>
                     <div className="space-y-6">
