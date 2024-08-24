@@ -4,6 +4,7 @@ import { Manrope } from 'next/font/google';
 import { ThemeModeScript } from 'flowbite-react';
 import { Suspense } from "react";
 import Loading from "./loading";
+import { UserProvider } from '@/app/context_provider';
 
 import { NavBar } from '@/components/navbar';
 import { SideBar } from '@/components/sidebar';
@@ -26,13 +27,15 @@ export default function RootLayout({
         <ThemeModeScript />
       </head>
       <body className={manrope.className}>
-        <SideBar />
-        <main className="lg:ml-64 h-screen dark">
-          <NavBar />
-          <div className="px-5 py-8">
-            <Suspense fallback={<Loading />}>{children}</Suspense>
-          </div>
-        </main>
+        <UserProvider>
+          <SideBar />
+          <main className="lg:ml-64 h-screen dark">
+            <NavBar />
+            <div className="px-5 py-8">
+              <Suspense fallback={<Loading />}>{children}</Suspense>
+            </div>
+          </main>
+        </UserProvider>
       </body>
     </html>
   );
