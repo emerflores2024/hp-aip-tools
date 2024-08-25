@@ -28,7 +28,7 @@ export default function RootLayout({
       </head>
       <body className={manrope.className}>
         <UserProvider>
-          <SideBar />
+          <SideBar isMobile={false}/>
           <main className="lg:ml-64 h-screen dark">
             <NavBar />
             <div className="px-5 py-8">

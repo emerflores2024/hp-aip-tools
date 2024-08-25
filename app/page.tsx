@@ -129,14 +129,14 @@ export default async function Home() {
                   SmartFriend
                 </TableCell>
                 <TableCell>+1 844-814-1800</TableCell>
-                <TableCell>Not available</TableCell>
+                <TableCell>N/A</TableCell>
               </TableRow>
               <TableRow className="bg-white dark:border-gray-700 dark:bg-gray-800">
                 <TableCell className="whitespace-nowrap font-medium text-gray-900 dark:text-gray-100">
                   HP Store / Sales
                 </TableCell>
                 <TableCell>+1 866-625-3906</TableCell>
-                <TableCell>Not available</TableCell>
+                <TableCell>N/A</TableCell>
               </TableRow>
 
             </TableBody>

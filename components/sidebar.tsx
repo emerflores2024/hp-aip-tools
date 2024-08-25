@@ -18,7 +18,7 @@ const customTheme: CustomFlowbiteTheme['sidebar'] = {
   },
 };
 
-export function SideBar() {
+export function SideBar({ isMobile, onClose }: { isMobile: boolean, onClose?: () => void }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const openModal = () => setIsModalOpen(true);
   const closeModal = () => setIsModalOpen(false);
@@ -27,7 +27,7 @@ export function SideBar() {
   return (
     <>
       <Sidebar
-      className="fixed top-0 left-0 z-40 h-screen hidden lg:block"
+      className={`fixed left-0 z-40 h-screen ${isMobile ? 'top-10 block' : 'top-0 hidden lg:block'}`}
       aria-label="Sidebar with logo branding example"
       theme={customTheme}
     >
@@ -41,12 +41,12 @@ export function SideBar() {
       </Sidebar.Logo>
       <Sidebar.Items>
         <Sidebar.ItemGroup>
-          <Sidebar.Item href="/" as={Link} icon={FcHome}>
+          <Sidebar.Item href="/" onClick={onClose} as={Link} icon={FcHome}>
             Home
           </Sidebar.Item>
           <Sidebar.Collapse icon={FcPrint} label="All-In Plan">
-            <Sidebar.Item href="/paas/notes" as={Link}>Notes generator</Sidebar.Item>
-            <Sidebar.Item href="/paas/email" as={Link}>Email templates</Sidebar.Item>
+            <Sidebar.Item href="/paas/notes" onClick={onClose} as={Link}>Notes generator</Sidebar.Item>
+            <Sidebar.Item href="/paas/email" onClick={onClose} as={Link}>Email templates</Sidebar.Item>
           </Sidebar.Collapse>
           <Sidebar.Collapse icon={FcReadingEbook} label="Laptop subscription">
             <Sidebar.Item href="#">Pending</Sidebar.Item>
