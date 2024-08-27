@@ -49,9 +49,8 @@ export function SideBar({ isMobile, onClose }: { isMobile: boolean, onClose?: ()
             <Sidebar.Item href="/paas/email" onClick={onClose} as={Link}>Email templates</Sidebar.Item>
           </Sidebar.Collapse>
           <Sidebar.Collapse icon={FcReadingEbook} label="Laptop subscription">
-            <Sidebar.Item href="#">Pending</Sidebar.Item>
-            <Sidebar.Item href="#">Resolved</Sidebar.Item>
-            <Sidebar.Item href="#">Closed</Sidebar.Item>
+            <Sidebar.Item href="/pcaas/notes" onClick={onClose} as={Link}>Notes generator</Sidebar.Item>
+            <Sidebar.Item href="/pcaas/email" onClick={onClose} as={Link}>Email templates</Sidebar.Item>
           </Sidebar.Collapse>
         </Sidebar.ItemGroup>
       </Sidebar.Items>

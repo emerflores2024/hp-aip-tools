@@ -3,20 +3,18 @@
 import { Label, Select, Textarea, Alert   } from "flowbite-react";
 import { FormEvent, useState, useRef, useEffect } from "react";
 import { Button, TextInput } from "flowbite-react";
-import setFirstPCAEmail from "@/email_resources/paas/templates/first_pca";
-import setSecondPCAEmail from "@/email_resources/paas/templates/second_pca";
-import setFinalPCAEmail from "@/email_resources/paas/templates/final_pca";
-import setEscResolutionEmail from "@/email_resources/paas/templates/escalation_resolution";
-import setReplacementOrderEmail from "@/email_resources/paas/templates/replacement_confirmation";
-import setInkReplenishmentEmail from "@/email_resources/paas/templates/ink_replenishment";
-import setLMIEmail from "@/email_resources/paas/templates/lmi_link";
-import FirstPCA from "@/email_resources/paas/components/first_pca";
-import SecondPCA from "@/email_resources/paas/components/second_pca";
-import FinalPCA from "@/email_resources/paas/components/final_pca";
-import EscalationResolution from "@/email_resources/paas/components/escalation_resolution";
-import ReplacementOrder from "@/email_resources/paas/components/replacement_confirmation";
-import InkReplenishment from "@/email_resources/paas/components/ink_replenishment";
-import LMILink from "@/email_resources/paas/components/lmi_link";
+import setFirstPCAEmail from "@/email_resources/pcaas/templates/first_pca";
+import setSecondPCAEmail from "@/email_resources/pcaas/templates/second_pca";
+import setFinalPCAEmail from "@/email_resources/pcaas/templates/final_pca";
+import setEscResolutionEmail from "@/email_resources/pcaas/templates/escalation_resolution";
+import setReplacementOrderEmail from "@/email_resources/pcaas/templates/replacement_confirmation";
+import setLMIEmail from "@/email_resources/pcaas/templates/lmi_link";
+import FirstPCA from "@/email_resources/pcaas/components/first_pca";
+import SecondPCA from "@/email_resources/pcaas/components/second_pca";
+import FinalPCA from "@/email_resources/pcaas/components/final_pca";
+import EscalationResolution from "@/email_resources/pcaas/components/escalation_resolution";
+import ReplacementOrder from "@/email_resources/pcaas/components/replacement_confirmation";
+import LMILink from "@/email_resources/pcaas/components/lmi_link";
 import { HiInformationCircle } from "react-icons/hi";
 import { useUser } from "@/app/context_provider";
 
@@ -93,8 +91,6 @@ export default function Email(this: any) {
                 return <EscalationResolution case_id={case_id} customer={customer} resolution={resolution} copyEmail={() => copyEmail(selectedTemplate)} tooltip={tooltip} user={userName}/>;
             case 'replacement_confirmation':
                 return <ReplacementOrder case_id={case_id} customer={customer} order={replacementOrder} copyEmail={() => copyEmail(selectedTemplate)} tooltip={tooltip} user={userName}/>;
-            case 'ink_replenishment':
-                return <InkReplenishment case_id={case_id} customer={customer} copyEmail={() => copyEmail(selectedTemplate)} tooltip={tooltip} user={userName}/>;
             case 'lmi_link':
                 return <LMILink customer={customer} copyEmail={() => copyEmail(selectedTemplate)} tooltip={tooltip} />;
         }
@@ -118,9 +114,6 @@ export default function Email(this: any) {
                 break
             case 'replacement_confirmation':
                 email_body = setReplacementOrderEmail(emailProps)
-                break
-            case 'ink_replenishment':
-                email_body = setInkReplenishmentEmail(emailProps)
                 break
             case 'lmi_link':
                 email_body = setLMIEmail(emailProps)
@@ -171,7 +164,6 @@ export default function Email(this: any) {
                             <option value="final_pca">Final follow up | Case closure</option>
                             <option value="escalation_resolution">Escalation resolution</option>
                             <option value="replacement_confirmation">Replacement confirmation</option>
-                            <option value="ink_replenishment">Ink replenishment</option>
                             <option value="lmi_link">LMI Link</option>
                         </Select>
                     </div>

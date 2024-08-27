@@ -10,38 +10,9 @@ import {
   TableHeadCell,
   TableRow,
 } from 'flowbite-react';
-import { sql } from '@vercel/postgres';
 import { FaPhone, FaClock, FaGlobe, FaCircleUser, FaSquareArrowUpRight } from "react-icons/fa6";
 
 export default async function Home() {
-
-  const sample_sql = await  sql`SELECT * FROM test;`;
-  const data_rows = sample_sql.rows;
-
-  {/* 
-  const [data, setData] = useState(null);
-  const [isLoading, setLoading] = useState(true);
-
-  
-
-  
-  useEffect(() => {
-    fetch('https://jsonplaceholder.typicode.com/todos/1')
-      .then((res) => res.json())
-      .then((data) => {
-        setData(data);
-        setLoading(false);
-      });
-  }, []);
-
-  if (isLoading)
-    return (
-      <div className="text-center">
-        <Spinner aria-label="Center-aligned spinner example" />
-      </div>
-    );
-    if (!data) return <p>No profile data</p>; */}
-
   return (
     <>
       <div className="gap-7 xl:gap-4 grid grid-cols-1 xl:grid-cols-3 text-gray-100">
@@ -115,7 +86,7 @@ export default async function Home() {
       </div>
 
       <div className='w-full flex flex-col xl:flex-row gap-7 xl:gap-4 mt-10'>
-        <div className="w-full">
+        <div className="w-full overflow-x-auto">
           <p className='text-white font-semibold mb-6'>Important departments</p>
           <Table>
             <TableHead>
