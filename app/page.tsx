@@ -10,14 +10,17 @@ import {
   TableHeadCell,
   TableRow,
 } from 'flowbite-react';
-import { FaPhone, FaClock, FaGlobe, FaCircleUser, FaSquareArrowUpRight } from "react-icons/fa6";
+import { FaPhone, FaClock, FaGlobe, FaCircleUser, FaSquareArrowUpRight, FaPrint, FaLaptop, FaDroplet, FaHeadphones  } from "react-icons/fa6";
 
 export default async function Home() {
   return (
     <>
       <div className="gap-7 xl:gap-4 grid grid-cols-1 xl:grid-cols-3 text-gray-100">
         <div className='flex flex-col'>
-          <p className='text-white font-semibold'>All-In Plan</p>
+          <div className='flex flex-row items-center gap-2'>
+            <FaPrint />
+            <p className='text-white font-semibold'>All-In Plan</p>
+          </div>
         <Card className="bg-gray-700 mt-5 h-full">
             <div className='flex flex-row items-center gap-4'>
               <FaPhone />
@@ -40,7 +43,10 @@ export default async function Home() {
           
 
         <div className='flex flex-col'>
-          <p className='text-white font-semibold'>Laptop subscription</p>
+          <div className='flex flex-row items-center gap-2'>
+            <FaLaptop className='text-xl'/>
+            <p className='text-white font-semibold'>Laptop subscription</p>
+          </div>
           <Card className="bg-gray-700 mt-5 h-full">
             <div className='flex flex-row items-center gap-4'>
               <FaPhone />
@@ -62,7 +68,10 @@ export default async function Home() {
         </div>
 
         <div className='flex flex-col'>
-          <p className='text-white font-semibold'>Instant Ink</p>
+          <div className='flex flex-row items-center gap-2'>
+            <FaDroplet/>
+            <p className='text-white font-semibold'>Instant Ink</p>
+          </div>
           <Card className="bg-gray-700 mt-5 h-full">
             <div className='flex flex-row items-center gap-4'>
               <FaPhone />
@@ -87,7 +96,10 @@ export default async function Home() {
 
       <div className='w-full flex flex-col xl:flex-row gap-7 xl:gap-4 mt-10'>
         <div className="w-full overflow-x-auto">
-          <p className='text-white font-semibold mb-6'>Important departments</p>
+          <div className='flex flex-row items-center gap-2 mb-6 text-white'>
+              <FaHeadphones />
+              <p className='text-white font-semibold'>Important departments</p>
+          </div>
           <Table>
             <TableHead>
               <TableHeadCell>Department</TableHeadCell>
@@ -104,18 +116,48 @@ export default async function Home() {
               </TableRow>
               <TableRow className="bg-white dark:border-gray-700 dark:bg-gray-800">
                 <TableCell className="whitespace-nowrap font-medium text-gray-900 dark:text-gray-100">
-                  HP Store / Sales
+                  HP Store: Sales
                 </TableCell>
-                <TableCell>+1 866-625-3906</TableCell>
+                <TableCell>+1 800-565-9917</TableCell>
+                <TableCell>1113121</TableCell>
+              </TableRow>
+              <TableRow className="bg-white dark:border-gray-700 dark:bg-gray-800">
+                <TableCell className="whitespace-nowrap font-medium text-gray-900 dark:text-gray-100">
+                  HP Store: Order status/help
+                </TableCell>
+                <TableCell>+1 800-407-4005</TableCell>
                 <TableCell>N/A</TableCell>
               </TableRow>
-
+              <TableRow className="bg-white dark:border-gray-700 dark:bg-gray-800">
+                <TableCell className="whitespace-nowrap font-medium text-gray-900 dark:text-gray-100">
+                  Instant Ink
+                </TableCell>
+                <TableCell>+1 855-785-2777</TableCell>
+                <TableCell>2053140</TableCell>
+              </TableRow>
+              <TableRow className="bg-white dark:border-gray-700 dark:bg-gray-800">
+                <TableCell className="whitespace-nowrap font-medium text-gray-900 dark:text-gray-100">
+                  All-In Plan Print
+                </TableCell>
+                <TableCell>+1 888-447-0148</TableCell>
+                <TableCell>N/A</TableCell>
+              </TableRow>
+              <TableRow className="bg-white dark:border-gray-700 dark:bg-gray-800">
+                <TableCell className="whitespace-nowrap font-medium text-gray-900 dark:text-gray-100">
+                  Laptop subscription
+                </TableCell>
+                <TableCell>+1 866-204-8618</TableCell>
+                <TableCell>N/A</TableCell>
+              </TableRow>
             </TableBody>
           </Table>
         </div>
 
         <div className="w-full">
-          <p className='text-white font-semibold mb-6'>Useful links</p>
+          <div className='flex flex-row items-center gap-2 mb-6 text-white'>
+              <FaGlobe  />
+              <p className='text-white font-semibold'>Useful links</p>
+          </div>
           <Table>
             <TableHead>
               <TableHeadCell>Tool / Website</TableHeadCell>
@@ -127,7 +169,7 @@ export default async function Home() {
                   Global Newton
                 </TableCell>
                 <TableCell>
-                  <a className='flex flex-row items-center gap-2' href="https://gnpro.houston.hp.com/gnweb.net/login.aspx">Open link in new tab <FaSquareArrowUpRight /></a>
+                  <a className='flex flex-row items-center gap-2' target='_blank' href="https://gnpro.houston.hp.com/gnweb.net/login.aspx">Open link in new tab <FaSquareArrowUpRight /></a>
                 </TableCell>
               </TableRow>
               <TableRow className="bg-white dark:border-gray-700 dark:bg-gray-800">
@@ -144,6 +186,94 @@ export default async function Home() {
                 </TableCell>
                 <TableCell>
                   <a className='flex flex-row items-center gap-2' href="https://zimbra-dr.concentrix.com">Open link in new tab <FaSquareArrowUpRight /></a>
+                </TableCell>
+              </TableRow>
+              <TableRow className="bg-white dark:border-gray-700 dark:bg-gray-800">
+                <TableCell className="whitespace-nowrap font-medium text-gray-900 dark:text-gray-100">
+                  eStart
+                </TableCell>
+                <TableCell>
+                  <a className='flex flex-row items-center gap-2' href="https://estart.concentrix.com">Open link in new tab <FaSquareArrowUpRight /></a>
+                </TableCell>
+              </TableRow>
+              <TableRow className="bg-white dark:border-gray-700 dark:bg-gray-800">
+                <TableCell className="whitespace-nowrap font-medium text-gray-900 dark:text-gray-100">
+                  AST
+                </TableCell>
+                <TableCell>
+                  <a className='flex flex-row items-center gap-2' href="https://ast.instantink.com">Open link in new tab <FaSquareArrowUpRight /></a>
+                </TableCell>
+              </TableRow>
+              <TableRow className="bg-white dark:border-gray-700 dark:bg-gray-800">
+                <TableCell className="whitespace-nowrap font-medium text-gray-900 dark:text-gray-100">
+                  HP One Sharepoint
+                </TableCell>
+                <TableCell>
+                  <a className='flex flex-row items-center gap-2' href="https://cnxmail.sharepoint.com/sites/OPSSupport/HPONEADV">Open link in new tab <FaSquareArrowUpRight /></a>
+                </TableCell>
+              </TableRow>
+              <TableRow className="bg-white dark:border-gray-700 dark:bg-gray-800">
+                <TableCell className="whitespace-nowrap font-medium text-gray-900 dark:text-gray-100">
+                  4DX Tracker (PS)
+                </TableCell>
+                <TableCell>
+                  <a className='flex flex-row items-center gap-2' href="https://forms.office.com/pages/responsepage.aspx?id=1lGeWYwvR0OOWR95WlGpjLo8hHrg-SVFsZOxYSqSa9NUMDNESlJWNDNFOFg3UlMxMFhDVkswTlo1WC4u&wdLOR=c26512891-1E02-42F0-9ECF-CB8526F3F3B1">Open link in new tab <FaSquareArrowUpRight /></a>
+                </TableCell>
+              </TableRow>
+              <TableRow className="bg-white dark:border-gray-700 dark:bg-gray-800">
+                <TableCell className="whitespace-nowrap font-medium text-gray-900 dark:text-gray-100">
+                  4DX Tracker (Print)
+                </TableCell>
+                <TableCell>
+                  <a className='flex flex-row items-center gap-2' href="#">TDB<FaSquareArrowUpRight /></a>
+                </TableCell>
+              </TableRow>
+              <TableRow className="bg-white dark:border-gray-700 dark:bg-gray-800">
+                <TableCell className="whitespace-nowrap font-medium text-gray-900 dark:text-gray-100">
+                  Keylight
+                </TableCell>
+                <TableCell>
+                  <a className='flex flex-row items-center gap-2' href="https://hp.prod.keylight.com/account-management/accounts">Open link in new tab <FaSquareArrowUpRight /></a>
+                </TableCell>
+              </TableRow>
+              <TableRow className="bg-white dark:border-gray-700 dark:bg-gray-800">
+                <TableCell className="whitespace-nowrap font-medium text-gray-900 dark:text-gray-100">
+                  sNPS / CSAT Tool
+                </TableCell>
+                <TableCell>
+                  <a className='flex flex-row items-center gap-2' href="https://feedback2.hp.com">Open link in new tab <FaSquareArrowUpRight /></a>
+                </TableCell>
+              </TableRow>
+              <TableRow className="bg-white dark:border-gray-700 dark:bg-gray-800">
+                <TableCell className="whitespace-nowrap font-medium text-gray-900 dark:text-gray-100">
+                  Pulse
+                </TableCell>
+                <TableCell>
+                  <a className='flex flex-row items-center gap-2' href="https://pulse.concentrix.com">Open link in new tab <FaSquareArrowUpRight /></a>
+                </TableCell>
+              </TableRow>
+              <TableRow className="bg-white dark:border-gray-700 dark:bg-gray-800">
+                <TableCell className="whitespace-nowrap font-medium text-gray-900 dark:text-gray-100">
+                  CNXu
+                </TableCell>
+                <TableCell>
+                  <a className='flex flex-row items-center gap-2' href="https://cnxu.concentrix.com">Open link in new tab <FaSquareArrowUpRight /></a>
+                </TableCell>
+              </TableRow>
+              <TableRow className="bg-white dark:border-gray-700 dark:bg-gray-800">
+                <TableCell className="whitespace-nowrap font-medium text-gray-900 dark:text-gray-100">
+                  CNX Sharepoint
+                </TableCell>
+                <TableCell>
+                  <a className='flex flex-row items-center gap-2' href="https://sharepoint.concentrix.com/sites/cvgsansalvador/cnx/SitePages/index.aspx">Open link in new tab <FaSquareArrowUpRight /></a>
+                </TableCell>
+              </TableRow>
+              <TableRow className="bg-white dark:border-gray-700 dark:bg-gray-800">
+                <TableCell className="whitespace-nowrap font-medium text-gray-900 dark:text-gray-100">
+                  Workday
+                </TableCell>
+                <TableCell>
+                  <a className='flex flex-row items-center gap-2' href="https://workday.concentrix.com">Open link in new tab <FaSquareArrowUpRight /></a>
                 </TableCell>
               </TableRow>
             </TableBody>
