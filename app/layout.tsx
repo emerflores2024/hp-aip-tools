@@ -1,19 +1,21 @@
 import './globals.css';
 import type { Metadata } from 'next';
 import { Manrope } from 'next/font/google';
-import { ThemeModeScript } from 'flowbite-react';
+import { Banner, Footer, ThemeModeScript } from 'flowbite-react';
 import { Suspense } from "react";
 import Loading from "./loading";
 import { UserProvider } from '@/app/context_provider';
 
 import { NavBar } from '@/components/navbar';
 import { SideBar } from '@/components/sidebar';
+import { HiX } from 'react-icons/hi';
+import { MdAnnouncement } from 'react-icons/md';
 
 const manrope = Manrope({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'HP All-In Plan Tools',
-  description: 'This tool is intended for use to the All-In Plan Print and PCaaS advisors as an additional help to handle customer interactions',
+  title: 'My HP Tools',
+  description: 'This tool is intended for use to the All-In Plan Print and laptop Subscription advisors as an additional help to handle customer interactions',
 };
 
 export default function RootLayout({
@@ -29,10 +31,37 @@ export default function RootLayout({
       <body className={manrope.className}>
         <UserProvider>
           <SideBar isMobile={false}/>
-          <main className="lg:ml-64 h-screen dark">
+          <main className="lg:ml-64 min-h-screen flex flex-col dark">
+            <Banner className='mt-5 mx-5'>
+              <div className="flex w-full items-center justify-between rounded-lg border-b border-gray-200 bg-gray-50 p-4 dark:border-gray-800 dark:bg-emerald-800">
+                <div className="mx-auto flex items-center">
+                  <p className="flex items-center text-sm font-normal text-gray-500 dark:text-gray-50">
+                    <MdAnnouncement className="mr-4 h-4 w-4 hidden xl:block shrink-0" />
+                    <span className="text-justify">
+                      Welcome to the new app for All-In Plan Print and Laptop Subscription advisors. Older versions are no longer working, you are automatically redirected to this new app.
+                    </span>
+                  </p>
+                </div>
+                <Banner.CollapseButton color="transparent" className="ml-4 border-0 bg-emerald-800 text-gray-500 dark:text-gray-50">
+                  <HiX className="h-4 w-4" />
+                </Banner.CollapseButton>
+              </div>
+            </Banner>
             <NavBar />
             <div className="px-5 py-8">
               <Suspense fallback={<Loading />}>{children}</Suspense>
+            </div>
+            <div className='dark mt-auto'>
+              <Footer container className='rounded-none dark:bg-transparent w-full'>
+                <div className='flex justify-between items-center text-gray-400 text-xs sm:text-sm w-full'>
+                  <div>
+                    <p>v3.0 Developed by Emerson Flores</p>
+                  </div>
+                  <div>
+                    <p>Last update: 08/28/2024</p>
+                  </div>
+                </div>
+              </Footer>
             </div>
           </main>
         </UserProvider>
