@@ -50,7 +50,7 @@ export default function LMILink(props: any) {
                     
                     <div className="relative flex items-center justify-center w-full">
                         <hr className="w-96 h-px my-8 bg-gray-200 border-0 dark:bg-gray-500" />
-                        <span className="absolute px-3 text-sm text-gray-900 -translate-x-1/2 bg-white left-1/2 dark:text-gray-200 dark:bg-gray-800 text-center">or if you are using a mobile device</span>
+                        <span className="absolute px-3 text-sm text-gray-900 -translate-x-1/2 bg-white left-1/2 dark:text-gray-200 dark:bg-gray-900 text-center">or if you are using a mobile device</span>
                     </div>
 
                     

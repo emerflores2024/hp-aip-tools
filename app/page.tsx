@@ -149,6 +149,20 @@ export default async function Home() {
                 <TableCell>+1 866-204-8618</TableCell>
                 <TableCell>N/A</TableCell>
               </TableRow>
+              <TableRow className="bg-white dark:border-gray-700 dark:bg-gray-800">
+                <TableCell className="whitespace-nowrap font-medium text-gray-900 dark:text-gray-100">
+                  OfficeJet Warranty
+                </TableCell>
+                <TableCell>N/A</TableCell>
+                <TableCell>6400309</TableCell>
+              </TableRow>
+              <TableRow className="bg-white dark:border-gray-700 dark:bg-gray-800">
+                <TableCell className="whitespace-nowrap font-medium text-gray-900 dark:text-gray-100">
+                  LaserJet Warranty
+                </TableCell>
+                <TableCell>N/A</TableCell>
+                <TableCell>6412854</TableCell>
+              </TableRow>
             </TableBody>
           </Table>
         </div>
@@ -177,7 +191,7 @@ export default async function Home() {
                   CDAX
                 </TableCell>
                 <TableCell>
-                  <a className='flex flex-row items-center gap-2' href="https://hpcdax.crm.dynamics.com/main.aspx?appid=02f7c914-5a2c-eb11-a813-000d3af68ad4">Open link in new tab <FaSquareArrowUpRight /></a>
+                  <a className='flex flex-row items-center gap-2' target='_blank' href="https://hpcdax.crm.dynamics.com/main.aspx?appid=02f7c914-5a2c-eb11-a813-000d3af68ad4">Open link in new tab <FaSquareArrowUpRight /></a>
                 </TableCell>
               </TableRow>
               <TableRow className="bg-white dark:border-gray-700 dark:bg-gray-800">
@@ -185,7 +199,7 @@ export default async function Home() {
                   Zimbra
                 </TableCell>
                 <TableCell>
-                  <a className='flex flex-row items-center gap-2' href="https://zimbra-dr.concentrix.com">Open link in new tab <FaSquareArrowUpRight /></a>
+                  <a className='flex flex-row items-center gap-2' target='_blank' href="https://zimbra-dr.concentrix.com">Open link in new tab <FaSquareArrowUpRight /></a>
                 </TableCell>
               </TableRow>
               <TableRow className="bg-white dark:border-gray-700 dark:bg-gray-800">
@@ -193,7 +207,7 @@ export default async function Home() {
                   eStart
                 </TableCell>
                 <TableCell>
-                  <a className='flex flex-row items-center gap-2' href="https://estart.concentrix.com">Open link in new tab <FaSquareArrowUpRight /></a>
+                  <a className='flex flex-row items-center gap-2' target='_blank' href="https://estart.concentrix.com">Open link in new tab <FaSquareArrowUpRight /></a>
                 </TableCell>
               </TableRow>
               <TableRow className="bg-white dark:border-gray-700 dark:bg-gray-800">
@@ -201,7 +215,7 @@ export default async function Home() {
                   AST
                 </TableCell>
                 <TableCell>
-                  <a className='flex flex-row items-center gap-2' href="https://ast.instantink.com">Open link in new tab <FaSquareArrowUpRight /></a>
+                  <a className='flex flex-row items-center gap-2' target='_blank' href="https://ast.instantink.com">Open link in new tab <FaSquareArrowUpRight /></a>
                 </TableCell>
               </TableRow>
               <TableRow className="bg-white dark:border-gray-700 dark:bg-gray-800">
@@ -209,7 +223,7 @@ export default async function Home() {
                   HP One Sharepoint
                 </TableCell>
                 <TableCell>
-                  <a className='flex flex-row items-center gap-2' href="https://cnxmail.sharepoint.com/sites/OPSSupport/HPONEADV">Open link in new tab <FaSquareArrowUpRight /></a>
+                  <a className='flex flex-row items-center gap-2' target='_blank' href="https://cnxmail.sharepoint.com/sites/OPSSupport/HPONEADV">Open link in new tab <FaSquareArrowUpRight /></a>
                 </TableCell>
               </TableRow>
               <TableRow className="bg-white dark:border-gray-700 dark:bg-gray-800">
@@ -217,7 +231,7 @@ export default async function Home() {
                   4DX Tracker (PS)
                 </TableCell>
                 <TableCell>
-                  <a className='flex flex-row items-center gap-2' href="https://forms.office.com/pages/responsepage.aspx?id=1lGeWYwvR0OOWR95WlGpjLo8hHrg-SVFsZOxYSqSa9NUMDNESlJWNDNFOFg3UlMxMFhDVkswTlo1WC4u&wdLOR=c26512891-1E02-42F0-9ECF-CB8526F3F3B1">Open link in new tab <FaSquareArrowUpRight /></a>
+                  <a className='flex flex-row items-center gap-2' target='_blank' href="https://forms.office.com/pages/responsepage.aspx?id=1lGeWYwvR0OOWR95WlGpjLo8hHrg-SVFsZOxYSqSa9NUMDNESlJWNDNFOFg3UlMxMFhDVkswTlo1WC4u&wdLOR=c26512891-1E02-42F0-9ECF-CB8526F3F3B1">Open link in new tab <FaSquareArrowUpRight /></a>
                 </TableCell>
               </TableRow>
               <TableRow className="bg-white dark:border-gray-700 dark:bg-gray-800">
@@ -225,7 +239,7 @@ export default async function Home() {
                   4DX Tracker (Print)
                 </TableCell>
                 <TableCell>
-                  <a className='flex flex-row items-center gap-2' href="#">TDB<FaSquareArrowUpRight /></a>
+                  <a className='flex flex-row items-center gap-2' target='_blank' href="https://forms.office.com/pages/responsepage.aspx?id=1lGeWYwvR0OOWR95WlGpjC7kJCptCZpIhqF39jAnVMRUOFZXNUJEV083RDhKUzNVVThNS0FHNUs1Uy4u">Open link in new tab<FaSquareArrowUpRight /></a>
                 </TableCell>
               </TableRow>
               <TableRow className="bg-white dark:border-gray-700 dark:bg-gray-800">
@@ -233,7 +247,7 @@ export default async function Home() {
                   Keylight
                 </TableCell>
                 <TableCell>
-                  <a className='flex flex-row items-center gap-2' href="https://hp.prod.keylight.com/account-management/accounts">Open link in new tab <FaSquareArrowUpRight /></a>
+                  <a className='flex flex-row items-center gap-2' target='_blank' href="https://hp.prod.keylight.com/account-management/accounts">Open link in new tab <FaSquareArrowUpRight /></a>
                 </TableCell>
               </TableRow>
               <TableRow className="bg-white dark:border-gray-700 dark:bg-gray-800">
@@ -241,7 +255,7 @@ export default async function Home() {
                   sNPS / CSAT Tool
                 </TableCell>
                 <TableCell>
-                  <a className='flex flex-row items-center gap-2' href="https://feedback2.hp.com">Open link in new tab <FaSquareArrowUpRight /></a>
+                  <a className='flex flex-row items-center gap-2' target='_blank' href="https://feedback2.hp.com">Open link in new tab <FaSquareArrowUpRight /></a>
                 </TableCell>
               </TableRow>
               <TableRow className="bg-white dark:border-gray-700 dark:bg-gray-800">
@@ -249,7 +263,7 @@ export default async function Home() {
                   Pulse
                 </TableCell>
                 <TableCell>
-                  <a className='flex flex-row items-center gap-2' href="https://pulse.concentrix.com">Open link in new tab <FaSquareArrowUpRight /></a>
+                  <a className='flex flex-row items-center gap-2' target='_blank' href="https://pulse.concentrix.com">Open link in new tab <FaSquareArrowUpRight /></a>
                 </TableCell>
               </TableRow>
               <TableRow className="bg-white dark:border-gray-700 dark:bg-gray-800">
@@ -257,7 +271,7 @@ export default async function Home() {
                   CNXu
                 </TableCell>
                 <TableCell>
-                  <a className='flex flex-row items-center gap-2' href="https://cnxu.concentrix.com">Open link in new tab <FaSquareArrowUpRight /></a>
+                  <a className='flex flex-row items-center gap-2' target='_blank' href="https://cnxu.concentrix.com">Open link in new tab <FaSquareArrowUpRight /></a>
                 </TableCell>
               </TableRow>
               <TableRow className="bg-white dark:border-gray-700 dark:bg-gray-800">
@@ -265,7 +279,7 @@ export default async function Home() {
                   CNX Sharepoint
                 </TableCell>
                 <TableCell>
-                  <a className='flex flex-row items-center gap-2' href="https://sharepoint.concentrix.com/sites/cvgsansalvador/cnx/SitePages/index.aspx">Open link in new tab <FaSquareArrowUpRight /></a>
+                  <a className='flex flex-row items-center gap-2' target='_blank' href="https://sharepoint.concentrix.com/sites/cvgsansalvador/cnx/SitePages/index.aspx">Open link in new tab <FaSquareArrowUpRight /></a>
                 </TableCell>
               </TableRow>
               <TableRow className="bg-white dark:border-gray-700 dark:bg-gray-800">
@@ -273,7 +287,7 @@ export default async function Home() {
                   Workday
                 </TableCell>
                 <TableCell>
-                  <a className='flex flex-row items-center gap-2' href="https://workday.concentrix.com">Open link in new tab <FaSquareArrowUpRight /></a>
+                  <a className='flex flex-row items-center gap-2' target='_blank' href="https://workday.concentrix.com">Open link in new tab <FaSquareArrowUpRight /></a>
                 </TableCell>
               </TableRow>
             </TableBody>
