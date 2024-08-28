@@ -1,7 +1,7 @@
 {/* 'use client'; */}
 
 import { useState, useEffect } from 'react';
-import { Card } from 'flowbite-react';
+import { Banner, Card } from 'flowbite-react';
 import {
   Table,
   TableBody,
@@ -11,6 +11,8 @@ import {
   TableRow,
 } from 'flowbite-react';
 import { FaPhone, FaClock, FaGlobe, FaCircleUser, FaSquareArrowUpRight, FaPrint, FaLaptop, FaDroplet, FaHeadphones  } from "react-icons/fa6";
+import { HiArrowRight, HiX } from 'react-icons/hi';
+import { MdAnnouncement, MdPercent } from 'react-icons/md';
 
 export default async function Home() {
   return (
@@ -294,7 +296,6 @@ export default async function Home() {
           </Table>
         </div>
       </div>
-
     </>
   );
 }
