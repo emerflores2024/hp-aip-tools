@@ -153,6 +153,13 @@ export default async function Home() {
               </TableRow>
               <TableRow className="bg-white dark:border-gray-700 dark:bg-gray-800">
                 <TableCell className="whitespace-nowrap font-medium text-gray-900 dark:text-gray-100">
+                  General Warranty
+                </TableCell>
+                <TableCell>+1 800-474-6836</TableCell>
+                <TableCell>N/A</TableCell>
+              </TableRow>
+              <TableRow className="bg-white dark:border-gray-700 dark:bg-gray-800">
+                <TableCell className="whitespace-nowrap font-medium text-gray-900 dark:text-gray-100">
                   OfficeJet Warranty
                 </TableCell>
                 <TableCell>N/A</TableCell>
@@ -290,6 +297,14 @@ export default async function Home() {
                 </TableCell>
                 <TableCell>
                   <a className='flex flex-row items-center gap-2' target='_blank' href="https://workday.concentrix.com">Open link in new tab <FaSquareArrowUpRight /></a>
+                </TableCell>
+              </TableRow>
+              <TableRow className="bg-white dark:border-gray-700 dark:bg-gray-800">
+                <TableCell className="whitespace-nowrap font-medium text-gray-900 dark:text-gray-100">
+                  Transportation Request
+                </TableCell>
+                <TableCell>
+                  <a className='flex flex-row items-center gap-2' target='_blank' href="https://sharepoint.concentrix.com/sites/cvgsansalvador/cnx/SitePages/Transportation.aspx">Open link in new tab <FaSquareArrowUpRight /></a>
                 </TableCell>
               </TableRow>
             </TableBody>
