@@ -1,9 +1,9 @@
 export default function setFirstPCAEmail(props: any){
     const first_pca = `
-    <table style="font-size: 1rem; border-radius: 0.5rem; width: 100%; max-width: 80%; margin-left: auto; margin-right: auto; border-collapse: collapse;">
+    <table style="margin-top: 0!important; padding-top: 0!important; font-size: 1rem; border-radius: 0.5rem; width: 100%; max-width: 80%; margin-left: auto; margin-right: auto; border-collapse: collapse;">
       <tr>
-          <td style="display: flex; align-items: center;">
-              <table style="width: 100%; border-radius: 0.5rem; background: linear-gradient(to right, #6b21a8, #06b6d4); border-collapse: collapse; height: 70px;">
+          <td style="display: flex; align-items: center; height: 60px;">
+              <table style="width: 100%; border-radius: 0.5rem; background: linear-gradient(to right, #6b21a8, #06b6d4); border-collapse: collapse; height: 60px;">
                   <tr>
                       <td style="padding-left: 1.25rem;">
                         <p style="font-size: 1.125rem; font-weight: bold; color: white;">Hello, ${props.customer}</p>
