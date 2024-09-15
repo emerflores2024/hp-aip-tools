@@ -221,6 +221,14 @@ export default async function Home() {
               </TableRow>
               <TableRow className="bg-white dark:border-gray-700 dark:bg-gray-800">
                 <TableCell className="whitespace-nowrap font-medium text-gray-900 dark:text-gray-100">
+                  Jira Escalation Tracker
+                </TableCell>
+                <TableCell>
+                  <a className='flex flex-row items-center gap-2' target='_blank' href="https://cnxmail-my.sharepoint.com/personal/pamela_cruz_concentrix_com/_layouts/15/listforms.aspx?cid=NDhhNTJmZTYtYzM4ZS00ZDEyLTg1MmQtZTlmZGFkZDMyYmQ5&nav=ZmI3Y2E1MzMtNTk2NC00OTdkLThmYWItZDdiNmZjZDNiYmE3&LOF=1">Open link in new tab <FaSquareArrowUpRight /></a>
+                </TableCell>
+              </TableRow>
+              <TableRow className="bg-white dark:border-gray-700 dark:bg-gray-800">
+                <TableCell className="whitespace-nowrap font-medium text-gray-900 dark:text-gray-100">
                   AST
                 </TableCell>
                 <TableCell>
