@@ -125,6 +125,13 @@ export default async function Home() {
               </TableRow>
               <TableRow className="bg-white dark:border-gray-700 dark:bg-gray-800">
                 <TableCell className="whitespace-nowrap font-medium text-gray-900 dark:text-gray-100">
+                  HP CarePack Registration
+                </TableCell>
+                <TableCell>+1 800-407-6210</TableCell>
+                <TableCell>2053261</TableCell>
+              </TableRow>
+              <TableRow className="bg-white dark:border-gray-700 dark:bg-gray-800">
+                <TableCell className="whitespace-nowrap font-medium text-gray-900 dark:text-gray-100">
                   HP Store: Order status/help
                 </TableCell>
                 <TableCell>+1 800-407-4005</TableCell>
