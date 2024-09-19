@@ -58,7 +58,7 @@ export default function RootLayout({
                     <p>v3.0 Developed by Emerson Flores</p>
                   </div>
                   <div>
-                    <p>Last update: 09/14/2024</p>
+                    <p>Last update: 09/19/2024</p>
                   </div>
                 </div>
               </Footer>

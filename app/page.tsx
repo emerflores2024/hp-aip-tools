@@ -252,6 +252,22 @@ export default async function Home() {
               </TableRow>
               <TableRow className="bg-white dark:border-gray-700 dark:bg-gray-800">
                 <TableCell className="whitespace-nowrap font-medium text-gray-900 dark:text-gray-100">
+                  iHub Sharepoint
+                </TableCell>
+                <TableCell>
+                  <a className='flex flex-row items-center gap-2' target='_blank' href="https://cnxmail.sharepoint.com/sites/OPSSupport/iHUB">Open link in new tab <FaSquareArrowUpRight /></a>
+                </TableCell>
+              </TableRow>
+              <TableRow className="bg-white dark:border-gray-700 dark:bg-gray-800">
+                <TableCell className="whitespace-nowrap font-medium text-gray-900 dark:text-gray-100">
+                  Instant Ink Sharepoint
+                </TableCell>
+                <TableCell>
+                  <a className='flex flex-row items-center gap-2' target='_blank' href="https://cnxmail.sharepoint.com/sites/msteams_997130">Open link in new tab <FaSquareArrowUpRight /></a>
+                </TableCell>
+              </TableRow>
+              <TableRow className="bg-white dark:border-gray-700 dark:bg-gray-800">
+                <TableCell className="whitespace-nowrap font-medium text-gray-900 dark:text-gray-100">
                   4DX Tracker (PS)
                 </TableCell>
                 <TableCell>
