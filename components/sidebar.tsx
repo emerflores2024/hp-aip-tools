@@ -47,6 +47,7 @@ export function SideBar({ isMobile, onClose }: { isMobile: boolean, onClose?: ()
           <Sidebar.Collapse icon={FcPrint} label="All-In Plan">
             <Sidebar.Item href="/paas/notes" onClick={onClose} as={Link}>Notes generator</Sidebar.Item>
             <Sidebar.Item href="/paas/email" onClick={onClose} as={Link}>Email templates</Sidebar.Item>
+            <Sidebar.Item href="/paas/guidelines" onClick={onClose} as={Link}>Guidelines</Sidebar.Item>
           </Sidebar.Collapse>
           <Sidebar.Collapse icon={FcReadingEbook} label="Laptop subscription">
             <Sidebar.Item href="/pcaas/notes" onClick={onClose} as={Link}>Notes generator</Sidebar.Item>
