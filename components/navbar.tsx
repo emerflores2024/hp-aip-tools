@@ -13,7 +13,7 @@ import { useState } from 'react';
 
 
 export function NavBar() {
-  type TitleKeys = "/" | "/paas/notes" | "/paas/email" | "/paas/guidelines" |  "/pcaas/notes" | "/pcaas/email";
+  type TitleKeys = "/" | "/paas/notes" | "/paas/email" | "/paas/resources" |  "/pcaas/notes" | "/pcaas/email";
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const closeDrawer = () => setIsDrawerOpen(false);
   const openDrawer = () => setIsDrawerOpen(true);
@@ -22,7 +22,7 @@ export function NavBar() {
     "/": "Home",
     "/paas/notes": "All-In Plan > Notes generator",
     "/paas/email": "All-In Plan > Email templates",
-    "/paas/guidelines": "All-In Plan > General guidelines",
+    "/paas/resources": "All-In Plan > Resources",
     "/pcaas/notes": "Laptop subscription > Notes generator",
     "/pcaas/email": "Laptop subscription > Email templates"
   };

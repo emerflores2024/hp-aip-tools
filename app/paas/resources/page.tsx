@@ -1,10 +1,12 @@
 import { CustomFlowbiteTheme, Table, TableBody, TableCell, TableHead, TableHeadCell, TableRow } from "flowbite-react";
 import { Accordion, AccordionContent, AccordionPanel, AccordionTitle } from "flowbite-react";
+import { Card } from "flowbite-react";
+import { Button } from "flowbite-react";
 import { FaBriefcase } from "react-icons/fa6";
 
-export default function Guidelines() {
+export default function Resources() {
     return (
-        <Accordion>
+        <Accordion collapseAll>
             <AccordionPanel>
                 <AccordionTitle className="dark:focus:ring-0 dark:text-gray-200">Case creation guidelines</AccordionTitle>
                 <AccordionContent>
@@ -100,16 +102,58 @@ export default function Guidelines() {
                 </AccordionContent>
             </AccordionPanel>
             <AccordionPanel>
-                <AccordionTitle className="dark:focus:ring-0 dark:text-gray-200">Printer user guides</AccordionTitle>
+                <AccordionTitle className="dark:focus:ring-0 dark:text-gray-200">Printer specs / user guides</AccordionTitle>
                 <AccordionContent>
-                    <p className="text-gray-200 text-sm">It is useful for you to have printer user guides for troubleshooting or guide the customer on how to do certain steps on the printer, here are the user guide links for all the printers we currently support:</p>
-                    
-                    <ul className="list-disc list-inside text-gray-200 mt-5 ml-5 text-sm">
-                        <li>HP Envy 6020e: <a href="https://h10032.www1.hp.com/ctg/Manual/c06584210.pdf" target="_blank" className="text-cyan-500 text-sm">https://h10032.www1.hp.com/ctg/Manual/c06584210.pdf</a></li>
-                        <li>HP Envy Inspire 7258e: <a href="https://h10032.www1.hp.com/ctg/Manual/c07773132.pdf" target="_blank" className="text-cyan-500 text-sm">https://h10032.www1.hp.com/ctg/Manual/c07773132.pdf</a></li>
-                        <li>HP OfficeJet Pro 9010e: <a href="https://h10032.www1.hp.com/ctg/Manual/c06940372.pdf" target="_blank" className="text-cyan-500 text-sm">https://h10032.www1.hp.com/ctg/Manual/c06940372.pdf</a></li>
-                        <li>HP OfficeJet Pro 9129e: <a href="https://kaas.hpcloud.hp.com/pdf-public/pdf_6212888_en-US-1.pdf" target="_blank" className="text-cyan-500 text-sm">https://kaas.hpcloud.hp.com/pdf-public/pdf_6212888_en-US-1.pdf</a></li>
-                    </ul>
+                    <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 2xl:grid-cols-5 gap-4">
+                        <Card className="w-sm text-center h-full">
+                            <div className="h-32 flex justify-center">
+                                <img className="h-32" src="https://sg-media.apjonlinecdn.com/catalog/product/cache/b3b166914d87ce343d4dc5ec5117b502/2/2/223N6A-1_T1678862955.png" alt="" />
+                            </div>
+                            <h5 className="text-lg font-bold tracking-tight text-gray-900 dark:text-white mt-5">
+                                HP Envy 6020e
+                            </h5>
+                            <div className="flex flex-col gap-2 mt-5">
+                                <Button target="_blank" href="https://support.hp.com/us-en/product/setup-user-guides/hp-envy-6000e-all-in-one-printer-series/model/2100187513" color="blue">View specs</Button>
+                                <Button target="_blank" href="https://h10032.www1.hp.com/ctg/Manual/c06584210.pdf" color="light">View user guide</Button>
+                            </div>
+                        </Card>
+                        <Card className="w-sm text-center h-full">
+                            <div className="h-32 flex justify-center">
+                                <img className="h-32" src="https://ssl-product-images.www8-hp.com/digmedialib/prodimg/lowres/c08006016.png" alt="" />
+                            </div>
+                            <h5 className="text-lg font-bold tracking-tight text-gray-900 dark:text-white mt-5">
+                                HP Envy Inspire 7258e
+                            </h5>
+                            <div className="flex flex-col gap-2 mt-5">
+                                <Button href="https://support.hp.com/us-en/product/setup-user-guides/hp-envy-inspire-7200e-series/model/2100993007" target="_blank" color="blue">View specs</Button>
+                                <Button href="https://h10032.www1.hp.com/ctg/Manual/c07773132.pdf" target="_blank" color="light">View user guide</Button>
+                            </div>
+                        </Card>
+                        <Card className="w-sm text-center h-full">
+                            <div className="h-32 flex justify-center">
+                                <img className="h-32" src="https://ssl-product-images.www8-hp.com/digmedialib/prodimg/lowres/c07145677.png" alt="" />
+                            </div>
+                            <h5 className="text-lg font-bold tracking-tight text-gray-900 dark:text-white mt-5">
+                                HP OfficeJet Pro 9010e
+                            </h5>
+                            <div className="flex flex-col gap-2 mt-5">
+                                <Button href="https://support.hp.com/us-en/product/setup-user-guides/hp-officejet-pro-9010e-all-in-one-printer-series/38023430" target="_blank" color="blue">View specs</Button>
+                                <Button href="https://h10032.www1.hp.com/ctg/Manual/c06940372.pdf" target="_blank" color="light">View user guide</Button>
+                            </div>
+                        </Card>
+                        <Card className="w-sm text-center h-full">
+                            <div className="h-32 flex justify-center">
+                                <img className="h-32" src="https://ssl-product-images.www8-hp.com/digmedialib/prodimg/lowres/c08966759.png?impolicy=Png_Res" alt="" />
+                            </div>
+                            <h5 className="text-lg font-bold tracking-tight text-gray-900 dark:text-white mt-5">
+                                HP OfficeJet Pro 9129e
+                            </h5>
+                            <div className="flex flex-col gap-2 mt-5">
+                                <Button href="https://support.hp.com/us-en/product/setup-user-guides/hp-officejet-pro-9120e-all-in-one-series/model/2101679522" target="_blank" color="blue">View specs</Button>
+                                <Button href="https://kaas.hpcloud.hp.com/pdf-public/pdf_6212888_en-US-1.pdf" target="_blank" color="light">View user guide</Button>
+                            </div>
+                        </Card>
+                    </div>
                 </AccordionContent>
             </AccordionPanel>
         </Accordion>
