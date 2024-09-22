@@ -32,21 +32,21 @@ export default function RootLayout({
         <UserProvider>
           <SideBar isMobile={false}/>
           <main className="lg:ml-64 min-h-screen flex flex-col dark">
-            {/*<Banner className='mt-5 mx-5'>
-              <div className="flex w-full items-center justify-between rounded-lg border-b border-gray-200 bg-gray-50 p-4 dark:border-gray-800 dark:bg-yellow-500">
+            <Banner className='mt-5 mx-5'>
+              <div className="flex w-full items-center justify-between rounded-lg border-b border-gray-200 bg-gray-50 p-4 dark:border-gray-800 dark:bg-emerald-800">
                 <div className="mx-auto flex items-center">
                   <p className="flex items-center text-sm font-normal text-gray-500 dark:text-gray-50">
                     <MdAnnouncement className="mr-4 h-4 w-4 hidden xl:block shrink-0" />
                     <span className="text-justify">
-                      I have updated email templates for All-In Plan print (PCaaS templates will be updated later), as some of you gave feedback that when email was sent to customers, the layout and some items were not displaying correctly. When you paste the email to CDAX, you will see some blank space added on top, this is something added automatically by CDAX editor as I am using a table layout, so unfortunately I do not have a way to remove it but you will need to delete it. Any other feedback is welcome!
+                      I have added a new section of &quot;Resources&quot; under the All-In Plan menu, you can find some useful information there. I will add more content based on your feedback and needs.
                     </span>
                   </p>
                 </div>
-                <Banner.CollapseButton color="transparent" className="ml-4 border-0 bg-yellow-500 text-gray-500 dark:text-gray-50">
+                <Banner.CollapseButton color="transparent" className="ml-4 border-0 bg-emerald-800 text-gray-500 dark:text-gray-50">
                   <HiX className="h-4 w-4" />
                 </Banner.CollapseButton>
               </div>
-  </Banner>*/}
+            </Banner>
             <NavBar />
             <div className="px-5 py-8">
               <Suspense fallback={<Loading />}>{children}</Suspense>
@@ -58,7 +58,7 @@ export default function RootLayout({
                     <p>v3.0 Developed by Emerson Flores</p>
                   </div>
                   <div>
-                    <p>Last update: 09/19/2024</p>
+                    <p>Last update: 09/21/2024</p>
                   </div>
                 </div>
               </Footer>
