@@ -38,7 +38,7 @@ export default function RootLayout({
                   <p className="flex items-center text-sm font-normal text-gray-500 dark:text-gray-50">
                     <MdAnnouncement className="mr-4 h-4 w-4 hidden xl:block shrink-0" />
                     <span className="text-justify">
-                      I have added a new section of "Resources" under the All-In Plan menu, you can find some useful information there. I will add more content based on your feedback and needs.
+                      I have added a new section of &quot;Resources&quot; under the All-In Plan menu, you can find some useful information there. I will add more content based on your feedback and needs.
                     </span>
                   </p>
                 </div>
