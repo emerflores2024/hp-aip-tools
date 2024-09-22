@@ -103,6 +103,7 @@ export default function Guidelines() {
                 <AccordionTitle className="dark:focus:ring-0 dark:text-gray-200">Printer user guides</AccordionTitle>
                 <AccordionContent>
                     <p className="text-gray-200 text-sm">It is useful for you to have printer user guides for troubleshooting or guide the customer on how to do certain steps on the printer, here are the user guide links for all the printers we currently support:</p>
+                    
                     <ul className="list-disc list-inside text-gray-200 mt-5 ml-5 text-sm">
                         <li>HP Envy 6020e: <a href="https://h10032.www1.hp.com/ctg/Manual/c06584210.pdf" target="_blank" className="text-cyan-500 text-sm">https://h10032.www1.hp.com/ctg/Manual/c06584210.pdf</a></li>
                         <li>HP Envy Inspire 7258e: <a href="https://h10032.www1.hp.com/ctg/Manual/c07773132.pdf" target="_blank" className="text-cyan-500 text-sm">https://h10032.www1.hp.com/ctg/Manual/c07773132.pdf</a></li>
