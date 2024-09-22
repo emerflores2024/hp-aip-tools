@@ -42,7 +42,7 @@ export default function Guidelines() {
                                 </TableRow>
                                 <TableRow className="bg-white dark:border-gray-700 dark:bg-gray-800">
                                     <TableCell className="whitespace-nowrap font-medium text-gray-900 dark:text-gray-100">
-                                        AIP General Information, pre enrollment requirements, Ex. Printer models available, prices, program general questions, T&C, printer's specs.
+                                        AIP General Information, pre enrollment requirements, Ex. Printer models available, prices, program general questions, T&C, printer&apos;s specs.
                                     </TableCell>
                                     <TableCell>Non-Tech Solution</TableCell>
                                 </TableRow>
@@ -86,7 +86,7 @@ export default function Guidelines() {
                                     <TableCell className="whitespace-nowrap font-medium text-gray-900 dark:text-gray-100">
                                         Operating System Not Compaible (E.g. customers with 1 device only and having Linux or old Windows 7 / 8 version, or cellphones with old iOS / Android version)
                                     </TableCell>
-                                    <TableCell>Create a case and educate the customer about product limitations and close the case as "Unresolved - Not entitled for support", and recommend customers to cancel / return the device.</TableCell>
+                                    <TableCell>Create a case and educate the customer about product limitations and close the case as &quot;Unresolved - Not entitled for support&quot;, and recommend customers to cancel / return the device.</TableCell>
                                 </TableRow>
                             </TableBody>
                         </Table>
