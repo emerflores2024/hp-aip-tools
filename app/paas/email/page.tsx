@@ -19,6 +19,8 @@ import InkReplenishment from "@/email_resources/paas/components/ink_replenishmen
 import LMILink from "@/email_resources/paas/components/lmi_link";
 import { HiInformationCircle } from "react-icons/hi";
 import { useUser } from "@/app/context_provider";
+import Spectrum from "@/email_resources/paas/components/spectrum";
+import setSpectrumEmail from "@/email_resources/paas/templates/spectrum";
 
 export default function Email(this: any) {
     const formRef = useRef<HTMLFormElement>(null);
@@ -97,6 +99,8 @@ export default function Email(this: any) {
                 return <InkReplenishment case_id={case_id} customer={customer} copyEmail={() => copyEmail(selectedTemplate)} tooltip={tooltip} user={userName}/>;
             case 'lmi_link':
                 return <LMILink customer={customer} copyEmail={() => copyEmail(selectedTemplate)} tooltip={tooltip} />;
+            case 'spectrum':
+                return <Spectrum case_id={case_id} customer={customer} copyEmail={() => copyEmail(selectedTemplate)} tooltip={tooltip} user={userName}/>;
         }
     };
 
@@ -124,6 +128,9 @@ export default function Email(this: any) {
                 break
             case 'lmi_link':
                 email_body = setLMIEmail(emailProps)
+                break
+            case 'spectrum':
+                email_body = setSpectrumEmail(emailProps)
                 break
         }
         if (email_body) {
@@ -168,8 +175,9 @@ export default function Email(this: any) {
                             <option value="" disabled selected>-- Select a template --</option>
                             <option value="first_pca">First follow up</option>
                             <option value="second_pca">Second follow up</option>
-                            <option value="final_pca">Final follow up | Case closure</option>
+                            <option value="final_pca">Final follow up / Case closure</option>
                             <option value="escalation_resolution">Escalation resolution</option>
+                            <option value="spectrum">Referred to Spectrum</option>
                             <option value="replacement_confirmation">Replacement confirmation</option>
                             <option value="ink_replenishment">Ink replenishment</option>
                             <option value="lmi_link">LMI Link</option>
