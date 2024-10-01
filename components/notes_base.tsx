@@ -1,6 +1,6 @@
 'use client'
 
-import { Clipboard } from "flowbite-react"
+import { Checkbox, Clipboard, Radio } from "flowbite-react"
 import { Label, Select } from "flowbite-react";
 import { useState } from "react";
 import { Textarea } from "flowbite-react";
@@ -8,9 +8,14 @@ import { Button } from "flowbite-react";
 
 export default function Notes(props: any) {
     const [selectedSubject, setSelectedSubject] = useState('');
+    const [caseType, setCaseType] = useState('');
     const [issue, setIssue] = useState('');
     const [troubleshooting, setTroubleshooting] = useState('');
     const [resolution, setResolution] = useState('');
+
+    const handleCaseTypeChange = (event: any) => {
+        setCaseType(event.target.value);
+    };
 
     const handleSubjectChange = (event: any) => {
         setSelectedSubject(event.target.value);
@@ -61,9 +66,23 @@ ${resolution}
         <>
             <div className="flex items-end gap-2 w-full md:px-24 lg:max-w-md mx-auto lg:px-0">
                 <div className="w-full rounded-lg">
-                    <div className="mb-2 block">
+                    <div className="mb-5 block">
                         <Label htmlFor="subjects" value="Case subject" />
                     </div>
+                    <fieldset className="flex max-w-md flex-row gap-4 mb-5">
+                        <div className="flex items-center gap-2">
+                            <Radio className="focus:ring-0 focus:ring-offset-0" id="regular" name="case_type" value="" defaultChecked onChange={handleCaseTypeChange}/>
+                            <Label htmlFor="regular">Regular case</Label>
+                        </div>
+                        <div className="flex items-center gap-2">
+                            <Radio className="focus:ring-0 focus:ring-offset-0" id="jira" name="case_type" value="Jira | " onChange={handleCaseTypeChange}/>
+                            <Label htmlFor="jira">Jira esc</Label>
+                        </div>
+                        <div className="flex items-center gap-2">
+                            <Radio className="focus:ring-0 focus:ring-offset-0" id="exec" name="case_type" value="EE | " onChange={handleCaseTypeChange}/>
+                            <Label htmlFor="exec">Executive esc</Label>
+                        </div>
+                    </fieldset>
                     <Select id="subjects" required onChange={handleSubjectChange} value={selectedSubject}>
                     <option value="" disabled selected>-- Select an option --</option>
                         {props.list.map((item: string, index: number) => (
@@ -71,7 +90,7 @@ ${resolution}
                         ))}
                     </Select>
                 </div>
-                <Clipboard valueToCopy={props.lob + selectedSubject} label="Copy" />
+                <Clipboard valueToCopy={caseType + props.lob + selectedSubject} label="Copy" />
             </div>
 
             <div className="flex flex-col gap-4 mt-5 justify-center w-full md:px-24 lg:max-w-md lg:px-0 mx-auto">
