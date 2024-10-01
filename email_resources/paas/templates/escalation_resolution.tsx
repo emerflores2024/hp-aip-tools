@@ -17,7 +17,7 @@ export default function setEscResolutionEmail(props: any){
         <td style="padding-left: 1.25rem; padding-right: 1.25rem;">
           <p style="color: #1f2937; text-align: justify; margin: 10px 0 0 0;">This email is just to inform you about the resolution of the most recent case you have opened with us and that was escalated a couple of days ago. This is the resolution provided by our support team:</p>
           <p style="color: #1f2937; text-align: justify; margin: 0; font-style: italic;"> ${props.resolution} </p>
-          <p style="color: #1f2937; text-align: justify; margin: 0;">If you still have any questions about the resolution, you can reply back to this email or you can contact us back and we will be more than happy to help you. Take care and have a wonderful day!</p>
+          <p style="color: #1f2937; text-align: justify; margin: 0;">If you still have any questions about the resolution, you can contact us back and we will be more than happy to help you. Take care and have a wonderful day!</p>
           <p style="color: #1f2937; text-align: justify; margin: 0;">Here is your case number for future reference: <strong>${props.case_id}</strong></p>
         </td>
       </tr>

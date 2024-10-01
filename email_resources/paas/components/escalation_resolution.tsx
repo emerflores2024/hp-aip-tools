@@ -49,7 +49,7 @@ export default function EscalationResolution(props: any) {
                     </p>
                     <br></br>
                     <p className="text-white text-justify">
-                        If you still have any questions about the resolution, you can reply back to this email or you can contact us back and we will be more than happy to help you. Take care and have a wonderful day!
+                        If you still have any questions about the resolution, you can contact us back and we will be more than happy to help you. Take care and have a wonderful day!
                     </p>
                     <br></br>
                     <p className="text-white text-justify">

@@ -13,13 +13,14 @@ import { useState } from 'react';
 
 
 export function NavBar() {
-  type TitleKeys = "/" | "/paas/notes" | "/paas/email" | "/paas/resources" |  "/pcaas/notes" | "/pcaas/email";
+  type TitleKeys = "/" | "/notifications" | "/paas/notes" | "/paas/email" | "/paas/resources" |  "/pcaas/notes" | "/pcaas/email";
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const closeDrawer = () => setIsDrawerOpen(false);
   const openDrawer = () => setIsDrawerOpen(true);
 
   const titles: Record<TitleKeys, string> = {
     "/": "Home",
+    "/notifications": "Notifications",
     "/paas/notes": "All-In Plan > Notes generator",
     "/paas/email": "All-In Plan > Email templates",
     "/paas/resources": "All-In Plan > Resources",

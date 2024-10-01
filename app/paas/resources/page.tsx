@@ -98,7 +98,7 @@ export default function Resources() {
             <AccordionPanel>
                 <AccordionTitle className="dark:focus:ring-0 dark:text-gray-200">All-In Plan Terms & Conditions</AccordionTitle>
                 <AccordionContent>
-                    <p className="text-gray-200 text-sm">You can find the All-In Plan Terms & Conditions on the following link: <a className="text-cyan-500" target="_blank" href="https://www.hp.com/us-en/all-in-plan/terms.html">https://www.hp.com/us-en/all-in-plan/terms.html</a></p>
+                    <p className="text-gray-200 text-sm">You can find the All-In Plan Terms & Conditions on the following link: <a className="text-cyan-400" target="_blank" href="https://www.hp.com/us-en/all-in-plan/terms.html">https://www.hp.com/us-en/all-in-plan/terms.html</a></p>
                 </AccordionContent>
             </AccordionPanel>
             <AccordionPanel>

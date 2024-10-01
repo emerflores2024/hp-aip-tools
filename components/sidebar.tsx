@@ -1,9 +1,7 @@
 'use client';
 
 import { Button, Sidebar } from 'flowbite-react';
-import { FcPrint } from "react-icons/fc";
-import { FcReadingEbook } from "react-icons/fc";
-import { FcHome } from "react-icons/fc";
+import { FaBell, FaHouse, FaPrint, FaLaptop } from "react-icons/fa6";
 import type { CustomFlowbiteTheme } from 'flowbite-react';
 import Link from 'next/link';
 import { useState } from 'react';
@@ -34,22 +32,25 @@ export function SideBar({ isMobile, onClose }: { isMobile: boolean, onClose?: ()
       <Sidebar.Logo
         href="#"
         img="https://hp-emailgenerator.web.app/static/hp-logo.png"
-        imgAlt="Flowbite logo"
+        imgAlt="HP logo"
         className="pt-2"
       >
         My Tools
       </Sidebar.Logo>
       <Sidebar.Items>
         <Sidebar.ItemGroup>
-          <Sidebar.Item href="/" onClick={onClose} as={Link} icon={FcHome}>
+          <Sidebar.Item href="/" onClick={onClose} as={Link} icon={() => <FaHouse className="text-sky-300" />}>
             Home
           </Sidebar.Item>
-          <Sidebar.Collapse icon={FcPrint} label="All-In Plan">
+          <Sidebar.Item href="/notifications" onClick={onClose} as={Link} icon={() => <FaBell className="text-yellow-300" />}>
+            Notifications
+          </Sidebar.Item>
+          <Sidebar.Collapse icon={() => <FaPrint className="text-violet-300" />} label="All-In Plan">
             <Sidebar.Item href="/paas/notes" onClick={onClose} as={Link}>Notes generator</Sidebar.Item>
             <Sidebar.Item href="/paas/email" onClick={onClose} as={Link}>Email templates</Sidebar.Item>
             <Sidebar.Item href="/paas/resources" onClick={onClose} as={Link}>Resources</Sidebar.Item>
           </Sidebar.Collapse>
-          <Sidebar.Collapse icon={FcReadingEbook} label="Laptop subscription">
+          <Sidebar.Collapse icon={() => <FaLaptop className="text-emerald-300" />} label="Laptop subscription">
             <Sidebar.Item href="/pcaas/notes" onClick={onClose} as={Link}>Notes generator</Sidebar.Item>
             <Sidebar.Item href="/pcaas/email" onClick={onClose} as={Link}>Email templates</Sidebar.Item>
           </Sidebar.Collapse>
