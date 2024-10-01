@@ -231,7 +231,7 @@ export default async function Home() {
                   Jira Escalation Tracker
                 </TableCell>
                 <TableCell>
-                  <a className='flex flex-row items-center gap-2' target='_blank' href="https://cnxmail-my.sharepoint.com/personal/pamela_cruz_concentrix_com/_layouts/15/listforms.aspx?cid=NDhhNTJmZTYtYzM4ZS00ZDEyLTg1MmQtZTlmZGFkZDMyYmQ5&nav=ZmI3Y2E1MzMtNTk2NC00OTdkLThmYWItZDdiNmZjZDNiYmE3&LOF=1">Open link in new tab <FaSquareArrowUpRight /></a>
+                  <a className='flex flex-row items-center gap-2' target='_blank' href="https://cnxmail-my.sharepoint.com/:l:/g/personal/pamela_cruz_concentrix_com/FOYvpUiOwxJNhS3p_a3TK9kBqJ1XaGVv1xDRXreAxXaD5Q?nav=ZmI3Y2E1MzMtNTk2NC00OTdkLThmYWItZDdiNmZjZDNiYmE3&xsdata=MDV8MDJ8am9zdWVhbGJlcnRvLmNoaWNhc0Bjb25jZW50cml4LmNvbXwwODg5YzY4NGM5YzM0NDQzYWNkNzA4ZGNkMWQ1YjVlZHw1OTllNTFkNjJmOGM0MzQ3OGU1OTFmNzk1YTUxYTk4Y3wwfDB8NjM4NjE1OTYzMjE1MTc5Mjg5fFVua25vd258VFdGcGJHWnNiM2Q4ZXlKV0lqb2lNQzR3TGpBd01EQWlMQ0pRSWpvaVYybHVNeklpTENKQlRpSTZJazFoYVd3aUxDSlhWQ0k2TW4wPXwwfHx8&sdata=cWFCVTJmYlNlNm5IeUYyU0R3L2Q0Zkk1UDJzQWNqbnQyMVg1dXFrT3l0Zz0%3d">Open link in new tab <FaSquareArrowUpRight /></a>
                 </TableCell>
               </TableRow>
               <TableRow className="bg-white dark:border-gray-700 dark:bg-gray-800">
