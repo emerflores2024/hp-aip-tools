@@ -268,18 +268,10 @@ export default async function Home() {
               </TableRow>
               <TableRow className="bg-white dark:border-gray-700 dark:bg-gray-800">
                 <TableCell className="whitespace-nowrap font-medium text-gray-900 dark:text-gray-100">
-                  4DX Tracker (PS)
+                  4DX Tracker
                 </TableCell>
                 <TableCell>
-                  <a className='flex flex-row items-center gap-2' target='_blank' href="https://forms.office.com/pages/responsepage.aspx?id=1lGeWYwvR0OOWR95WlGpjLo8hHrg-SVFsZOxYSqSa9NUMDNESlJWNDNFOFg3UlMxMFhDVkswTlo1WC4u&wdLOR=c26512891-1E02-42F0-9ECF-CB8526F3F3B1">Open link in new tab <FaSquareArrowUpRight /></a>
-                </TableCell>
-              </TableRow>
-              <TableRow className="bg-white dark:border-gray-700 dark:bg-gray-800">
-                <TableCell className="whitespace-nowrap font-medium text-gray-900 dark:text-gray-100">
-                  4DX Tracker (Print)
-                </TableCell>
-                <TableCell>
-                  <a className='flex flex-row items-center gap-2' target='_blank' href="https://forms.office.com/pages/responsepage.aspx?id=1lGeWYwvR0OOWR95WlGpjC7kJCptCZpIhqF39jAnVMRUOFZXNUJEV083RDhKUzNVVThNS0FHNUs1Uy4u">Open link in new tab<FaSquareArrowUpRight /></a>
+                  <a className='flex flex-row items-center gap-2' target='_blank' href="https://forms.office.com/Pages/ResponsePage.aspx?id=1lGeWYwvR0OOWR95WlGpjFZNhPh7YfdKjqHqlSc0RhFUMFc4MFZJV083RlZOMlJTRFg5VkJKMkVBSi4u">Open link in new tab <FaSquareArrowUpRight /></a>
                 </TableCell>
               </TableRow>
               <TableRow className="bg-white dark:border-gray-700 dark:bg-gray-800">
