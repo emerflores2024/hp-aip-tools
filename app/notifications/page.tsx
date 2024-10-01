@@ -23,11 +23,11 @@ export default function Notifications(){
                 </div>
                 <div className="flex flex-col w-full">
                     <div className="flex justify-between">
-                        <p className="font-bold text-red-400">Jhon Barry's information</p>
+                        <p className="font-bold text-red-400">Jhon Barry&#39;s information</p>
                         <p className="text-sm text-gray-300">10/01/2024</p>
                     </div>
                     <div className="mt-2 text-justify">
-                        Please don't place any ink or replacement orders for a profile with the following address: 453 Highland Ave Ozark, AL 36360
+                        Please don&#39;t place any ink or replacement orders for a profile with the following address: 453 Highland Ave Ozark, AL 36360
                     </div>
                 </div>
             </div>
