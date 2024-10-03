@@ -8,16 +8,30 @@ import { Textarea } from "flowbite-react";
 import { Button } from "flowbite-react";
 
 export default function Notes(props: any) {
+    const formatToMMDDYYYY = (dateStr: any) => {
+        try {
+          const parsedDate = new Date(dateStr);
+          const formattedDate = parsedDate.toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: '2-digit',
+            day: '2-digit',
+          });
+          return formattedDate;
+        } catch (error) {
+          return 'Invalid date format. Please provide a valid date.';
+        }
+      };
+      
     const [selectedSubject, setSelectedSubject] = useState('');
     const [caseType, setCaseType] = useState('');
     const [issue, setIssue] = useState('');
     const [troubleshooting, setTroubleshooting] = useState('');
     const [resolution, setResolution] = useState('');
 
-    const [enrollmentDate, setEnrollmentDate] = useState('');
+    const [enrollmentDate, setEnrollmentDate] = useState(formatToMMDDYYYY(Date()));
 
-    const handleEnrollmentDateChange = (event: any) => {
-        setEnrollmentDate(event.target.value);
+    const handleEnrollmentDateChange = (date: any) => {
+        setEnrollmentDate(formatToMMDDYYYY(date));
     };
 
     const handleCaseTypeChange = (event: any) => {
@@ -129,7 +143,7 @@ ${enrollmentDate}
                             <div className="mb-2">
                                 <Label htmlFor="enrollment_date" value="Enrollment date" />
                             </div>
-                            <Datepicker value={enrollmentDate} onChange={handleEnrollmentDateChange} id="enrollment_date" name="enrollment_date" required />
+                            <Datepicker value={enrollmentDate} onSelectedDateChanged={handleEnrollmentDateChange} id="enrollment_date" name="enrollment_date" required />
                         </div>
                         <div className="w-1/2">
                             <div className="mb-2 block">
