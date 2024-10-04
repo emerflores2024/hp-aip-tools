@@ -23,15 +23,45 @@ export default function Notes(props: any) {
       };
       
     const [selectedSubject, setSelectedSubject] = useState('');
-    const [caseType, setCaseType] = useState('');
+    const [caseType, setCaseType] = useState("");
     const [issue, setIssue] = useState('');
     const [troubleshooting, setTroubleshooting] = useState('');
     const [resolution, setResolution] = useState('');
 
     const [enrollmentDate, setEnrollmentDate] = useState(formatToMMDDYYYY(Date()));
+    const [cancellationDate, setCancellationDate] = useState(formatToMMDDYYYY(Date()));
+    const [subsStatus, setSubsStatus] = useState('');
+    const [fedexURL, setFedexURL] = useState('');
+    const [jiraIssue, setJiraIssue] = useState('');
+    const [agentActions, setAgentActions] = useState('');
+    const [errorMessage, setErrorMessage] = useState('');
 
     const handleEnrollmentDateChange = (date: any) => {
         setEnrollmentDate(formatToMMDDYYYY(date));
+    };
+
+    const handleCancellationDateChange = (date: any) => {
+        setCancellationDate(formatToMMDDYYYY(date));
+    };
+
+    const handleJiraIssueChange = (event: any) => {
+        setJiraIssue(event.target.value);
+    };
+
+    const handleAgentActionsChange = (event: any) => {
+        setAgentActions(event.target.value);
+    };
+
+    const handleErrorChange = (event: any) => {
+        setErrorMessage(event.target.value);
+    };
+
+    const handleStatusChange = (event: any) => {
+        setSubsStatus(event.target.value);
+    };
+
+    const handleFedexChange = (event: any) => {
+        setFedexURL(event.target.value);
     };
 
     const handleCaseTypeChange = (event: any) => {
@@ -59,6 +89,13 @@ export default function Notes(props: any) {
         setTroubleshooting("")
         setResolution("")
         setSelectedSubject("")
+        setEnrollmentDate(formatToMMDDYYYY(Date()))
+        setCancellationDate(formatToMMDDYYYY(Date()))
+        setSubsStatus('Active')
+        setFedexURL("")
+        setJiraIssue("")
+        setAgentActions("")
+        setErrorMessage("")
     }
 
     const notes = 
@@ -84,26 +121,19 @@ ${resolution}
 {END CASE SUMMARY}`;
 
 const jira_notes = 
-`{START CASE SUMMARY}
-|Problem Description:
+`Date of customer enrollment: ${enrollmentDate}
 
-${enrollmentDate}
+Status of the subscription: ${subsStatus}
 
-|Frequency of failure:
-|How to reproduce the failure:
-|Error message:
-|Windows Version:
-|BIOS Version:
-|Troubleshooting:
+Date of cancellation (if applicable): ${cancellationDate}
 
+If the customer has returned the printer to HP provide a link to the FedEx tracking (if applicable): ${fedexURL}
 
+Summary of the issue: ${jiraIssue}
 
-|Resolution:
+Actions taken by agent: ${agentActions}
 
-
-
-|Leave blank:
-{END CASE SUMMARY}`;
+Error messages (please ask customers to share it via email): ${errorMessage}`;
 
     return (
         <>
@@ -149,9 +179,10 @@ ${enrollmentDate}
                             <div className="mb-2 block">
                                 <Label htmlFor="subscription_status" value="Subscription status" />
                             </div>
-                            <Select id="subscription_status" name="subscription_status" required>
+                            <Select onChange={handleStatusChange} value={subsStatus} id="subscription_status" name="subscription_status" required>
                                 <option>Active</option>
                                 <option>Inactive</option>
+                                <option>Suspended</option>
                             </Select>
                         </div>
                     </div>
@@ -159,31 +190,31 @@ ${enrollmentDate}
                         <div className="mb-2">
                             <Label htmlFor="cancellation_date" value="Cancellation date (if applicable)" />
                         </div>
-                        <Datepicker id="cancellation_date" name="cancellation_date" required />
+                        <Datepicker value={cancellationDate} onSelectedDateChanged={handleCancellationDateChange} id="cancellation_date" name="cancellation_date" required />
                     </div>
                     <div>
                         <div className="mb-2 block">
                             <Label htmlFor="fedex_return_url" value="If the customer has returned the printer to HP, provide a link to the FedEx tracking (if applicable)" />
                         </div>
-                        <TextInput id="fedex_return_url" name="fedex_return_url" type="text" placeholder="https://fedex.com/..." required />
+                        <TextInput onChange={handleFedexChange} value={fedexURL} id="fedex_return_url" name="fedex_return_url" type="text" placeholder="https://fedex.com/..." required />
                     </div>
                     <div className="w-full">
                         <div className="mb-2 block">
                             <Label htmlFor="jira_issue" value="Summary of the issue" />
                         </div>
-                        <Textarea onChange={handleIssueChange} id="jira_issue" name="jira_issue" placeholder="Enter the customer's issue..." required rows={6} value={issue} />
+                        <Textarea onChange={handleJiraIssueChange} id="jira_issue" name="jira_issue" placeholder="Enter the customer's issue..." required rows={6} value={jiraIssue} />
                     </div>
                     <div className="w-full">
                         <div className="mb-2 block">
                             <Label htmlFor="agent_actions" value="Actions taken by agent" />
                         </div>
-                        <Textarea onChange={handleIssueChange} id="agent_actions" name="agent_actions" placeholder="Enter what you did on the interaction..." required rows={6} value={issue} />
+                        <Textarea onChange={handleAgentActionsChange} id="agent_actions" name="agent_actions" placeholder="Enter what you did on the interaction..." required rows={6} value={agentActions} />
                     </div>
                     <div className="w-full">
                         <div className="mb-2 block">
                             <Label htmlFor="error_message" value="Error messages (please ask customer to share it via email)" />
                         </div>
-                        <Textarea onChange={handleIssueChange} id="error_message" name="error_message" placeholder="Enter error messages details..." required rows={6} value={issue} />
+                        <Textarea onChange={handleErrorChange} id="error_message" name="error_message" placeholder="Enter error messages details..." required rows={6} value={errorMessage} />
                     </div>
                     <div className="w-full mt-2 flex justify-between">
                         <Button onClick={() => resetAll()} color="light" >Reset all</Button>
