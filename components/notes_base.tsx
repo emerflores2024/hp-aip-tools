@@ -52,7 +52,7 @@ export default function Notes(props: any) {
 
     const handleCancelNAChange = () => {
         setCancelNA(!cancelNA);
-        if(!cancelNA){
+        if(cancelNA){
             setCancellationDate("N/A")
         } else {
             setCancellationDate(formatToMMDDYYYY(Date()))
@@ -107,6 +107,7 @@ export default function Notes(props: any) {
         setJiraIssue("")
         setAgentActions("")
         setErrorMessage("")
+        setCancelNA(false)
     }
 
     const notes = 
