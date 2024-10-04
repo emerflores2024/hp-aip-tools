@@ -36,6 +36,8 @@ export default function Notes(props: any) {
     const [agentActions, setAgentActions] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
 
+    const [cancelNA, setCancelNA] = useState(false);
+
     const handleEnrollmentDateChange = (date: any) => {
         setEnrollmentDate(formatToMMDDYYYY(date));
     };
@@ -46,6 +48,15 @@ export default function Notes(props: any) {
 
     const handleJiraIssueChange = (event: any) => {
         setJiraIssue(event.target.value);
+    };
+
+    const handleCancelNAChange = () => {
+        setCancelNA(!cancelNA);
+        if(!cancelNA){
+            setCancellationDate("N/A")
+        } else {
+            setCancellationDate(formatToMMDDYYYY(Date()))
+        }
     };
 
     const handleAgentActionsChange = (event: any) => {
@@ -188,9 +199,15 @@ Error messages (please ask customers to share it via email): ${errorMessage}`;
                     </div>
                     <div className="w-full">
                         <div className="mb-2">
-                            <Label htmlFor="cancellation_date" value="Cancellation date (if applicable)" />
+                            <div className="flex justify-between">
+                                <Label htmlFor="cancellation_date" value="Cancellation date" />
+                                <div className="flex items-center gap-2">
+                                    <Checkbox className="dark:focus:ring-0" onChange={handleCancelNAChange} id="cancel_na"/>
+                                    <Label htmlFor="cancel_na">Not applicable</Label>
+                                </div>
+                            </div>
                         </div>
-                        <Datepicker value={cancellationDate} onSelectedDateChanged={handleCancellationDateChange} id="cancellation_date" name="cancellation_date" required />
+                        <Datepicker disabled={cancelNA} value={cancellationDate} onSelectedDateChanged={handleCancellationDateChange} id="cancellation_date" name="cancellation_date" required />
                     </div>
                     <div>
                         <div className="mb-2 block">
